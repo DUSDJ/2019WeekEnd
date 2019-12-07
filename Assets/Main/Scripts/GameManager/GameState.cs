@@ -4,13 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Assets.Main.Scripts
-{
-    public enum GameState
+public enum GameState
 
-    {
-        Title,
-        Pause,
-        Gaming,
-    }
+{
+    Title,
+    Pause,
+    Gaming,
 }

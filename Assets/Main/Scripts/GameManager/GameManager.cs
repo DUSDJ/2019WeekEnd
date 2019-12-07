@@ -2,74 +2,157 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
-namespace Assets.Main.Scripts
+public class GameManager : Singleton<GameManager>
 {
-    public class GameManager : MonoBehaviour
+
+    #region Managers
+    private HeroManager heroManager;
+    public HeroManager HeroManager
     {
-
-        #region SingleTon
-        /* SingleTon */
-        private static GameManager instance;
-        public static GameManager Instance
+        get
         {
-            get
+            if (heroManager == null)
             {
-                if (instance == null)
+                heroManager = GameObject.FindObjectOfType(typeof(HeroManager)) as HeroManager;
+                if (!heroManager)
                 {
-                    instance = GameObject.FindObjectOfType(typeof(GameManager)) as GameManager;
-                    if (!instance)
-                    {
-                        GameObject container = new GameObject();
-                        container.name = "GameManager";
-                        instance = container.AddComponent(typeof(GameManager)) as GameManager;
-                    }
+                    GameObject container = new GameObject();
+                    container.name = "HeroManager";
+                    heroManager = container.AddComponent(typeof(HeroManager)) as HeroManager;
                 }
-
-                return instance;
             }
-        }
 
-        #endregion
-
-        #region Managers
-        private DungeonManager dungeonManager;
-        public DungeonManager DungeonManager
-        {
-            get
-            {
-                if (dungeonManager == null)
-                {
-                    dungeonManager = GameObject.FindObjectOfType(typeof(DungeonManager)) as DungeonManager;
-                    if (!instance)
-                    {
-                        GameObject container = new GameObject();
-                        container.name = "DungeonManager";
-                        dungeonManager = container.AddComponent(typeof(DungeonManager)) as DungeonManager;
-                    }
-                }
-
-                return dungeonManager;
-            }
-        }
-        #endregion
-
-        #region Variables
-
-        public GameState GameState;
-
-        #endregion
-
-        // Start is called before the first frame update
-        void Start()
-        {
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
+            return heroManager;
         }
     }
+
+    private ResourceManager resourceManager;
+    public ResourceManager ResourceManager
+    {
+        get
+        {
+            if (resourceManager == null)
+            {
+                resourceManager = GameObject.FindObjectOfType(typeof(ResourceManager)) as ResourceManager;
+                if (!resourceManager)
+                {
+                    GameObject container = new GameObject();
+                    container.name = "ResourceManager";
+                    resourceManager = container.AddComponent(typeof(ResourceManager)) as ResourceManager;
+                }
+            }
+
+            return resourceManager;
+        }
+    }
+
+    private House houseManger;
+    public House HouseManager
+    {
+        get
+        {
+            if (houseManger == null)
+            {
+                houseManger = GameObject.FindObjectOfType(typeof(House)) as House;
+                if (!houseManger)
+                {
+                    GameObject container = new GameObject();
+                    container.name = "HouseManger";
+                    houseManger = container.AddComponent(typeof(House)) as House;
+                }
+            }
+
+            return houseManger;
+        }
+    }
+
+
+
+    private DungeonManager dungeonManager;
+    public DungeonManager DungeonManager
+    {
+        get
+        {
+            if (dungeonManager == null)
+            {
+                dungeonManager = GameObject.FindObjectOfType(typeof(DungeonManager)) as DungeonManager;
+                if (!dungeonManager)
+                {
+                    GameObject container = new GameObject();
+                    container.name = "DungeonManager";
+                    dungeonManager = container.AddComponent(typeof(DungeonManager)) as DungeonManager;
+                }
+            }
+
+            return dungeonManager;
+        }
+    }
+
+    private EventManager eventManager;
+    public EventManager EventManager
+    {
+        get
+        {
+            if (eventManager == null)
+            {
+                eventManager = GameObject.FindObjectOfType(typeof(EventManager)) as EventManager;
+                if (!eventManager)
+                {
+                    GameObject container = new GameObject();
+                    container.name = "EventManager";
+                    eventManager = container.AddComponent(typeof(EventManager)) as EventManager;
+                }
+            }
+
+            return eventManager;
+        }
+    }
+    #endregion
+
+    #region Variables
+
+    public int MaxHero = 20;
+    public GameState GameState = GameState.Title;
+    public int StartingGold = 100;
+        
+
+    #endregion
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        ResourceManager.Gold = 100;
+
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if(GameState == GameState.Pause)
+        {
+            return;
+        }
+
+        if(GameState == GameState.Title)
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+
+            }
+
+            return;
+        }
+
+
+        if(GameState == GameState.Gaming)
+        {
+
+
+
+            return;
+        }
+
+    }
+
 }
