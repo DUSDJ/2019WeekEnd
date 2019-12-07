@@ -13,6 +13,9 @@ public class DungeonSlot : MonoBehaviour, IDungeonSlot
 {
     public DungeonInfoView dungeonInfomationView;
 
+    public bool isSelected = false;
+    public DungeonSlot index;
+
     public ICharacter heroDataBus = null;
     public Image heroIcon;
 
@@ -21,11 +24,22 @@ public class DungeonSlot : MonoBehaviour, IDungeonSlot
         return heroDataBus;
     }
 
+    public void OnClick()
+    {
+        dungeonInfomationView.SetSelectedSlot(this);
+    }
+
     public void SetHeroData(ICharacter hero)
     {
+        if (hero == null)
+        {
+            isSelected = false;
+            heroIcon.sprite = null;
+            return;
+        }
         heroDataBus = hero;
         heroIcon.sprite = hero.GetIcon();
-        
+
         DungeonInfoController.UpdateAverageStress();
     }
 }

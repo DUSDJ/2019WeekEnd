@@ -4,14 +4,14 @@ using TMPro;
 using System.Collections;
 
 public class DungeonInfoView : MonoBehaviour
-{ 
+{
     public TextMeshProUGUI dungeonLevelText;
     public TextMeshProUGUI rewardText;
     public TextMeshProUGUI stressText;
     public TextMeshProUGUI passDayText;
 
     public TextMeshProUGUI averageStressText;
-    
+
     public RectTransform averageStressIndicator;
     public Vector2 averageStressIndicatorMinPosition = new Vector2(0, 20),
         averageStressIndicatorMaxPosition = new Vector2(312, 20);
@@ -31,7 +31,7 @@ public class DungeonInfoView : MonoBehaviour
         "단원들에겐 큰 시련이 될 듯 합니다.",
         "단장님은 단원들을 사지로 몰 생각입니까?"
     };
-    
+
     public void UpdateView(FieldDungeon_Script.DungeonData dungeonData)
     {
         dungeonLevelText.text = dungeonLevels[(int)dungeonData.dungeonLevel];
@@ -42,10 +42,12 @@ public class DungeonInfoView : MonoBehaviour
         averageStressText.text = string.Format("원정대 평균스트레스 0%");
         averageStressIndicator.anchoredPosition = averageStressIndicatorMinPosition;
 
-        for(int ix = 0; ix < dungeonSlots.Length; ix++)
+        for (int ix = 0; ix < dungeonSlots.Length; ix++)
             dungeonSlots[ix].GetComponent<IDungeonSlot>().SetHeroData(null);
 
         speechBubble.SetActive(false);
+
+        selectedSlot = null;
     }
 
     public void UpdateAverageStress()
@@ -66,7 +68,7 @@ public class DungeonInfoView : MonoBehaviour
 
         int averageStress = (int)(totalStress / heroCountOnSlot);
         averageStressText.text = string.Format("원정대 평균스트레스 {0}%", averageStressText);
-        averageStressIndicator.anchoredPosition = 
+        averageStressIndicator.anchoredPosition =
             Vector2.Lerp(averageStressIndicatorMinPosition, averageStressIndicatorMaxPosition, averageStress / 100f);
 
         int averageLevel = (int)(totalLevel / heroCountOnSlot);
@@ -74,5 +76,28 @@ public class DungeonInfoView : MonoBehaviour
 
         speechBubble.SetActive(true);
         speechBubbleText.text = speechs[levelGrade];
-    }    
+    }
+
+    public DungeonSlot selectedSlot;
+
+    public void SetSelectedSlot(DungeonSlot slot)
+    {
+        selectedSlot = slot;
+        for (int ix = 0; ix < dungeonSlots.Length; ix++)
+        {
+            if (dungeonSlots[ix].GetComponent<DungeonSlot>() == slot)
+            {
+                dungeonSlots[ix].GetComponent<DungeonSlot>().isSelected = true;
+                continue;
+            }
+
+            dungeonSlots[ix].GetComponent<DungeonSlot>().isSelected = false;
+        }
+    }
+
+    public void SetHeroData(ICharacter hero)
+    {
+        if (selectedSlot != null)
+            selectedSlot.SetHeroData(hero);
+    }
 }
