@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ResourceManager : MonoBehaviour
 {
 
     #region Gold
 
-    private Text GoldText;
+    private TextMeshProUGUI GoldText;
 
     private int gold;
     public int Gold
@@ -54,7 +55,7 @@ public class ResourceManager : MonoBehaviour
 
     private void Awake()
     {
-        GoldText = GameObject.Find("GoldText").GetComponent<Text>();       
+        GoldText = GameObject.Find("GoldText").GetComponent<TextMeshProUGUI>();       
     }
 
 
