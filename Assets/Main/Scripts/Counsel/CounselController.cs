@@ -28,11 +28,11 @@ public class CounselController
         switch (model.SelectionParams[selectionIndex].parameterType)
         {
             case ParameterType.StressIncrease:
-                model.Hero.Stress += model.SelectionParams[selectionIndex].parameterValue;
+                model.Hero.AddStress(model.SelectionParams[selectionIndex].parameterValue);
                 break;
 
             case ParameterType.StressDecrease:
-                model.Hero.Stress -= model.SelectionParams[selectionIndex].parameterValue;
+                model.Hero.AddStress(model.SelectionParams[selectionIndex].parameterValue);
                 break;
         }
     }

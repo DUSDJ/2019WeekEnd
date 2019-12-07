@@ -1,42 +1,42 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.EventSystems;
+﻿//using System.Collections;
+//using System.Collections.Generic;
+//using UnityEngine;
+//using UnityEngine.EventSystems;
 
-public class Dungeon : MonoBehaviour, IPointerClickHandler
-{
-    private DungeonManager DGManager;
+//public class Dungeon : MonoBehaviour, IPointerClickHandler
+//{
+//    private DungeonManager DGManager;
 
-    public Sprite DungeonSprite;
-    public Sprite TorsoImage;
-    public string dungeonName;
-    public int hardness;
-    public Vector2 rewardRange;
-    public Vector2 stressRange;
-    public Vector2 timeRange;
+//    public Sprite DungeonSprite;
+//    public Sprite TorsoImage;
+//    public string dungeonName;
+//    public int hardness;
+//    public Vector2 rewardRange;
+//    public Vector2 stressRange;
+//    public Vector2 timeRange;
 
 
-    public void OnPointerClick(PointerEventData eventData)
-    {
-        DGManager.DungeonUI(true, DungeonSprite);
-    }
+//    public void OnPointerClick(PointerEventData eventData)
+//    {
+//        DGManager.DungeonUI(true, DungeonSprite);
+//    }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        // 임시, GameManager에서 받아올 예정
-        DGManager = FindObjectOfType<DungeonManager>();
-        if(DGManager == null)
-        {
-            GameObject go = new GameObject();
-            go.name = "DungeonManager";
-            go.AddComponent<DungeonManager>();
-        }
-    }
+//    // Start is called before the first frame update
+//    void Start()
+//    {
+//        // 임시, GameManager에서 받아올 예정
+//        DGManager = FindObjectOfType<DungeonManager>();
+//        if(DGManager == null)
+//        {
+//            GameObject go = new GameObject();
+//            go.name = "DungeonManager";
+//            go.AddComponent<DungeonManager>();
+//        }
+//    }
 
-    // Update is called once per frame
-    void Update()
-    {
+//    // Update is called once per frame
+//    void Update()
+//    {
 
-    }
-}
+//    }
+//}

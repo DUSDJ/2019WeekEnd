@@ -4,7 +4,7 @@ using System.Collections;
 public class CharacterTemp : MonoBehaviour
 {
     public HeroInfoManager heroInfoManager;
-    public Character hero;
+    public ICharacter hero;
 
     public void OnClick()
     {

@@ -3,7 +3,7 @@ using System.Collections;
 
 public class HeroInfoManager : MonoBehaviour
 {
-    public Character nowSelectedHero;
+    public ICharacter nowSelectedHero;
 
     public HeroInfoController heroInfoController;
     public CounselManager counselManager;
@@ -11,7 +11,7 @@ public class HeroInfoManager : MonoBehaviour
     public GameObject heroInfoPanel;
     public HeroInfoView heroInfoView;
 
-    public void Show(Character hero)
+    public void Show(ICharacter hero)
     {
         nowSelectedHero = hero;
 

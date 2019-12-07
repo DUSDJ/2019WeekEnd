@@ -5,77 +5,113 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-[Serializable]
-public class Character
-{
-    #region Variables
+//[Serializable]
+//public class ICharacter
+//{
+//    #region Variables
 
-    public CharacterJob Job; // 직업 (enum)
-    public string Name; // 이름
-    public int Level; // 레벨
-    public int Strength; // 힘
-    public int Agility; // 민첩
-    public int Intelligence; // 지능
+//    private CharacterJob job; // 직업 (enum)
+//    private string name; // 이름
+//    private int level; // 레벨
+//    private int strength; // 힘
+//    private int agility; // 민첩
+//    private int intelligence; // 지능
 
-    public int Stress; // 스트레스
-    public int Cost; // 고용비용
+//    public int Stress; // 스트레스
+//    public int Cost; // 고용비용
 
-    public bool needCounsel = false;
+//    private bool needCounsel = false;
 
-    public Resume resume;
+//    public Resume resume;
 
-    #endregion
+//    #endregion
 
-    #region sprite
+//    #region sprite
 
-    public Sprite Portrait; // 초상화
-    public Sprite Torso; // 흉상
+//    public Sprite Portrait; // 초상화
+//    public Sprite Torso; // 흉상
 
-    #endregion
+//    public CharacterJob GetJob()
+//    {
+//        return job;
+//    }
 
-    // Dummy Constructor
-    public Character()
-    {
+//    public string GetName()
+//    {
+//        return name;
+//    }
+    
+//    public int GetLevel()
+//    {
+//        return level;
+//    }
 
-    }
-    public Character(string name, Sprite portrait)
-    {
-        Name = name;
-        Portrait = portrait;
-    }
-    public Character(string name, Sprite portrait, int stress, int level, int cost)
-    {
-        Name = name;
-        Portrait = portrait;
-        Stress = stress;
-        Level = level;
-        Cost = cost;
-    }
+//    public int GetStrength()
+//    {
+//        return strength;
+//    }
+    
+//    public int GetAgility()
+//    {
+//        return agility;
+//    }
+    
+//    public int GetIntelligence()
+//    {
+//        return intelligence;
+//    }
 
-    // Generation Constructor
+//    public bool GetNeedCounsel()
+//    {
+//        return needCounsel;
+//    }
+    
 
-    public string CharacterJobToString()
-    {
-        string result = "";
+//    #endregion
 
-        switch (Job)
-        {
-            case CharacterJob.Barbarian:
-                result = "야만전사";
-                break;
-            case CharacterJob.Nun:
-                result = "북방의 여사제";
-                break;
-            case CharacterJob.Pirate:
-                result = "해적";
-                break;
-            case CharacterJob.PirateW:
-                result = "여해적";
-                break;
-            default:
-                break;
-        }
+//    // Dummy Constructor
+//    public ICharacter()
+//    {
 
-        return result;
-    }
-}
+//    }
+//    public ICharacter(string name, Sprite portrait)
+//    {
+//        SetName(name);
+//        Portrait = portrait;
+//    }
+//    public ICharacter(string name, Sprite portrait, int stress, int level, int cost)
+//    {
+//        SetName(name);
+//        Portrait = portrait;
+//        Stress = stress;
+//        SetLevel(level);
+//        Cost = cost;
+//    }
+
+//    // Generation Constructor
+
+//    public string CharacterJobToString()
+//    {
+//        string result = "";
+
+//        switch (GetJob())
+//        {
+//            case CharacterJob.Barbarian:
+//                result = "야만전사";
+//                break;
+//            case CharacterJob.Nun:
+//                result = "북방의 여사제";
+//                break;
+//            case CharacterJob.Pirate:
+//                result = "해적";
+//                break;
+//            case CharacterJob.PirateW:
+//                result = "여해적";
+//                break;
+//            default:
+//                break;
+//        }
+
+//        return result;
+//    }
+//}

@@ -14,14 +14,14 @@ public class CounselData
 
 public class CounselManager : MonoBehaviour
 {
-    public Character nowSelectedHero;
+    public ICharacter nowSelectedHero;
 
     public CounselData[] counselDatabase;
     public CounselController counselController;
 
     public CounselView counselView;
 
-    public void ShowCounsel(Character hero)
+    public void ShowCounsel(ICharacter hero)
     {
         nowSelectedHero = hero;
 
