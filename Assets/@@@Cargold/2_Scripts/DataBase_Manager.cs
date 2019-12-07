@@ -62,7 +62,8 @@ public class DataBase_Manager : MonoBehaviour
         public float rewardReviseMin;
         public float rewardReviseMax;
 
-        public float dungeonLastTime;
+        public float dungeonLastTimeMin;
+        public float dungeonLastTimeMax;
 
         public float[] levelRewardBonusArr;
 

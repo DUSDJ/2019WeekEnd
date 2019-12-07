@@ -1,0 +1,138 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7372185105950267984
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7372185105950267986}
+  - component: {fileID: 7372185105950267985}
+  m_Layer: 0
+  m_Name: DataBase_Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7372185105950267986
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7372185105950267984}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7372185105950267985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7372185105950267984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7d729995daf1cb408e4df8bc7405be9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hero:
+    heroDataArr:
+    - heroType: 0
+      portraitSprite: {fileID: 21300000, guid: 33627030ed7ccf7498c2d885f5944141, type: 3}
+      torsoSprite: {fileID: 21300000, guid: cede25cbf3cb4e5438583072f1dad405, type: 3}
+      job: "\uBC14\uC774\uBE0C \uCE74\uD558\uC758 \uB300\uD589\uC790"
+      nameArr:
+      - "\uC2A4\uD558\uC778"
+      - "\uD398\uBB34\uB974"
+      - "\uCE20\uD638\uB8E8"
+    - heroType: 1
+      portraitSprite: {fileID: 21300000, guid: 9c1bc3e1767be944e9023473ad8191ab, type: 3}
+      torsoSprite: {fileID: 21300000, guid: 820e755a904d51a4f8d4aec724e47b04, type: 3}
+      job: "\uD558\uBCF8\uB514\uC544\uC758 \uC1A1\uACF3\uB2C8"
+      nameArr:
+      - "\uD0C0\uB974\uB8E8\uD788\uC5D4"
+      - "\uD0A4\uCE20\uB85C\uD504"
+      - "\uD504\uD558\uD5E8"
+    - heroType: 2
+      portraitSprite: {fileID: 21300000, guid: 31d40934b06a86d4bb7e355134cba192, type: 3}
+      torsoSprite: {fileID: 21300000, guid: 135d861e7be9a164fb7bfdc958069fea, type: 3}
+      job: "\uBBF8\uD558\uD750 \uBC14\uB2E4\uC758 \uC880\uB3C4\uB451"
+      nameArr:
+      - "\uBBF8\uD5E8"
+      - "\uC9C0\uC2AC\uB809"
+      - "\uCFE0\uB370\uD788\uB974\uB9CC"
+    - heroType: 3
+      portraitSprite: {fileID: 21300000, guid: b95db020c82ebc04da0f9b47eb62d092, type: 3}
+      torsoSprite: {fileID: 21300000, guid: 640780be4cfb8154db3e7d34ae940ab3, type: 3}
+      job: "\uBBF8\uD558\uD750 \uBC14\uB2E4\uC758 \uC880\uB3C4\uB451"
+      nameArr:
+      - "\uBBF8\uB370\uBCF4"
+      - "\uC9C8\uCF04"
+      - "\uB9C8\uB4DC\uBAA8\uB9AC\uC544"
+    - heroType: 4
+      portraitSprite: {fileID: 21300000, guid: 3839df5b37cc80b41a5c22e494db810a, type: 3}
+      torsoSprite: {fileID: 21300000, guid: 8521205b3964b0c4ebe6c69d63ac227d, type: 3}
+      job: "\uBC14\uC774\uBE0C \uCE74\uD558\uC758 \uB300\uD589\uC790"
+      nameArr:
+      - "\uD30C\uC774\uD750"
+      - "\uCF00\uB178\uB974"
+      - "\uB4DC\uCE74\uB374"
+    - heroType: 5
+      portraitSprite: {fileID: 21300000, guid: b0356cdd87596b64b9939440618dcedb, type: 3}
+      torsoSprite: {fileID: 21300000, guid: c9b545fc11dc58143acb9899f5e3f76d, type: 3}
+      job: "\uC544\uBE0C\uB178\uBC14\uC758 \uACF0"
+      nameArr:
+      - "\uC544\uC988\uBAA8\uB358"
+      - "\uCC28\uC96C"
+      - "\uCF54\uB370\uBAA8\uB974"
+    - heroType: 6
+      portraitSprite: {fileID: 21300000, guid: bb871c3d6c5f99b40aa61b1f4beb1842, type: 3}
+      torsoSprite: {fileID: 21300000, guid: 0befb020cba653e4a920619acd0a7af5, type: 3}
+      job: "\uB77C\uBAA8\uB77D\uC758 \uB178\uAE30\uC0AC"
+      nameArr:
+      - "\uB4DC\uB77C\uBAA8\uADF8"
+      - "\uAC00\uB370\uBAA8\uB9AC"
+      - "\uD0C0\uACE0\uB2C8\uC544"
+    - heroType: 7
+      portraitSprite: {fileID: 21300000, guid: 4da7978d6acc05746b7f0a61f17ddd9c, type: 3}
+      torsoSprite: {fileID: 21300000, guid: 38f33efca5a399546a6cba898478fab4, type: 3}
+      job: "\uD558\uBCF8\uB514\uC544\uC758 \uC1A1\uACF3\uB2C8"
+      nameArr:
+      - "\uD558\uBCF8\uB4DC"
+      - "\uD5E4\uC774\uD5CC"
+      - "\uD790\uB808\uC774"
+  test:
+    startGold: 1000
+    dayPassTime: 5
+  dungeon:
+    levelDataArr:
+    - needDay: 5
+      levelGeneratePerArr: 0200000003000000040000000500000006000000
+    - needDay: 10
+      levelGeneratePerArr: 0300000003000000040000000500000006000000
+    - needDay: 15
+      levelGeneratePerArr: 0400000004000000040000000500000006000000
+    - needDay: 20
+      levelGeneratePerArr: 0500000005000000050000000500000006000000
+    - needDay: 25
+      levelGeneratePerArr: 0600000006000000060000000600000006000000
+    rewardDefault: 100
+    rewardMulti: 2
+    rewardReviseMin: 1
+    rewardReviseMax: 2.5
+    dungeonLastTimeMin: 10
+    dungeonLastTimeMax: 15
+    levelRewardBonusArr:
+    - 1
+    - 1.25
+    - 1.5
+    - 1.75
+    - 2

@@ -106,4 +106,10 @@ public class UserHeroData
     public HeroType heroType;
     public string heroName;
     public int heroLevel;
+    public int stressPoint;
+
+    public int strength;
+    public int agility;
+    public int intelligence;
+    public bool isNeedCounsel;
 }

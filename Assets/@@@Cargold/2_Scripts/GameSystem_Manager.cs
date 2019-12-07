@@ -11,6 +11,7 @@ public class GameSystem_Manager : MonoBehaviour
     public DataBase_Manager dataBase_Manager;
     public TimeSystem_Manager timeSystem_Manager;
     public FieldSystem_Manager fieldSystem_Manager;
+    public SoundManager soundManager;
 
     public UI_Time_Manager uI_Time_Manager;
     public UI_Atmo_Manager uI_Atmo_Manager;
@@ -35,6 +36,7 @@ public class GameSystem_Manager : MonoBehaviour
         yield return userSystem_Manager.Init_Cor(0);
         yield return uI_HeroList_Manager.Init_Cor();
         yield return fieldSystem_Manager.Init_Cor(0);
+        yield return soundManager.InitializeCoroutine();
 
         yield return guildSystem_Manager.Init_Cor(1);
         yield return uI_Time_Manager.Init_Cor(1);

@@ -57,8 +57,6 @@ public class HireHeroElem_Script : MonoBehaviour, IGeneratedByPoolingSystem, IWh
 
     public void CallBtn_Selected_Func()
     {
-        Debug_C.Log_Func("1");
-
         GuildSystem_Manager.Instance.SelectedElem_Func(this);
     }
 
@@ -92,4 +90,7 @@ public enum HeroType
     Pirate,
     PirateW,
     Priest,
+    Drawf,
+    Knight,
+    BarbarianW,
 }
