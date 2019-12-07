@@ -41,6 +41,8 @@ public class UserSystem_Manager : MonoBehaviour
         _userHeroData.heroLevel = _hireHeroData.heroLevel;
 
         this.userHeroDataList.AddNewItem_Func(_userHeroData);
+
+        UI_HeroList_Manager.Instance.GenerateElem_Func(_userHeroData);
     }
 
     public bool TryControlResource_Func(ResourceControlType _resourceControl, int _value, bool _isJustCheck = false)

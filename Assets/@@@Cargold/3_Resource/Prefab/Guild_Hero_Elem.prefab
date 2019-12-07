@@ -941,6 +941,7 @@ MonoBehaviour:
   heroName: 
   heroLevel: 0
   hireCost: 0
+  isHirable: 0
 --- !u!114 &18353771130080085
 MonoBehaviour:
   m_ObjectHideFlags: 0

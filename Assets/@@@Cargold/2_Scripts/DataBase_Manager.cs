@@ -10,6 +10,7 @@ public class DataBase_Manager : MonoBehaviour
 
     public Hero hero;
     public Test test;
+    public Dungeon dungeon;
 
     public IEnumerator Init_Cor()
     {
@@ -52,8 +53,30 @@ public class DataBase_Manager : MonoBehaviour
     }
 
     [System.Serializable]
+    public class Dungeon
+    {
+        public LevelData[] levelDataArr;
+
+        public int rewardDefault;
+        public float rewardMulti;
+        public float rewardReviseMin;
+        public float rewardReviseMax;
+
+        public float dungeonLastTime;
+
+        public float[] levelRewardBonusArr;
+
+        public struct LevelData
+        {
+            public int needDay;
+            public int[] levelPerArr;
+        }
+    }
+
+    [System.Serializable]
     public class Test
     {
         public int startGold;
+        public float dayPassTime;
     }
 }

@@ -32,7 +32,7 @@ public class GuildSystem_Manager : MonoBehaviour
             Instance = this;
 
             poolingSystem = new PoolingSystem<HireHeroElem_Script>();
-            poolingSystem.Init_Func(this.transform, elemObj, 3, false);
+            poolingSystem.Init_Func(this.transform, elemObj, 3);
             
             for (int i = 0; i < elemClassList.Count; i++)
                 GameObject.Destroy(elemClassList[i].gameObject);

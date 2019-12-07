@@ -18,10 +18,14 @@ public class HireHeroElem_View_Script : MonoBehaviour
     {
         selectedObj.SetActive(false);
         soldOutObj.SetActive(false);
+
+        this.Deactivate_Func(true);
     }
 
     public void Activate_Func(Sprite _portraitSprite, string _title, string _hireCost)
     {
+        this.gameObject.SetActive(true);
+
         portraitImg.sprite = _portraitSprite;
         this.titleTxt.text = _title;
         this.hireCostTxt.text = _hireCost;
@@ -41,8 +45,8 @@ public class HireHeroElem_View_Script : MonoBehaviour
         this.soldOutObj.SetActive(true);
     }
 
-    public void Deactivate_Func()
+    public void Deactivate_Func(bool _isInit = false)
     {
-
+        this.gameObject.SetActive(false);
     }
 }

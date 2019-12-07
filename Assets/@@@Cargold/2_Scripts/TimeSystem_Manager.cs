@@ -7,16 +7,14 @@ using UnityEngine;
 public class TimeSystem_Manager : MonoBehaviour
 {
     public static TimeSystem_Manager Instance;
-
-    [SerializeField] private float dayOutTime;
+    
     [SerializeField] private int maxDay;
     private Observer_Action<int> dayPassObserver;
     private Observer_Action<float> timeRunningObserver;
     private bool isTimeRunning;
     private float currentDayTime;
     private int currentDay;
-
-    public float DayOutTime { get { return dayOutTime; } } 
+    
     public int MaxDay { get { return maxDay; } }
     public int CurrentDay { get => currentDay; }
 
@@ -29,10 +27,10 @@ public class TimeSystem_Manager : MonoBehaviour
 
         isTimeRunning = false;
 
-        currentDayTime = this.dayOutTime;
+        currentDayTime = DataBase_Manager.Instance.test.dayPassTime;
 
         currentDay = 0;
-
+        
         yield break;
     }
 
@@ -58,7 +56,7 @@ public class TimeSystem_Manager : MonoBehaviour
                 {
                     this.currentDay++;
 
-                    currentDayTime = this.dayOutTime;
+                    currentDayTime = DataBase_Manager.Instance.test.dayPassTime;
 
                     dayPassObserver.Notify_Func(this.currentDay);
                 }
@@ -66,6 +64,11 @@ public class TimeSystem_Manager : MonoBehaviour
 
             yield return null;
         }
+    }
+
+    public void Pause_Func()
+    {
+        isTimeRunning = false;
     }
 
     public void Subscribe_Func(Action<float> _del)
@@ -84,5 +87,17 @@ public class TimeSystem_Manager : MonoBehaviour
     public void Remove_DayPass_Func(Action<int> _del)
     {
         this.dayPassObserver.Remove_Func(_del);
+    }
+
+    public void CallBtn_Play_Func()
+    {
+        if (isTimeRunning == false)
+        {
+            isTimeRunning = true;
+        }
+        else
+        {
+            isTimeRunning = false;
+        }
     }
 }
