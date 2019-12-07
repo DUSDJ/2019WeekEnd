@@ -65,6 +65,7 @@ public class GuildSystem_Manager : MonoBehaviour
     public void Activate_Func()
     {
     guildObj.SetActive(true);
+    guildObj.GetComponent<UIPopupTween>().OpenTween();
 
         if(isReserveElemReset == true)
         {
