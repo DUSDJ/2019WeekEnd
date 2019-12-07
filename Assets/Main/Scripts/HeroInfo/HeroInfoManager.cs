@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class HeroInfoManager : MonoBehaviour
+public class HeroInfoManager : Singleton<HeroInfoManager>
 {
     public ICharacter nowSelectedHero;
 

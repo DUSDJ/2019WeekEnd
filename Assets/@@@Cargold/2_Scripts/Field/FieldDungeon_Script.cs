@@ -69,6 +69,11 @@ public class FieldDungeon_Script : FieldIcon_Script
         public float lastTime;
     }
 
+    public interface IDungeonDataBus
+    {
+        DungeonData GetDungeonData();
+    }
+
     public enum DungeonLevel
     {
         VeryEasy = 0,

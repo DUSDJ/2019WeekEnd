@@ -11,7 +11,7 @@ public class HeroInfoModel
 
 public interface ICharacter
 {
-    CharacterJob GetJob();
+    HeroType GetJob();
     string GetName();
     int GetLevel();
     int GetStrength();
@@ -19,6 +19,5 @@ public interface ICharacter
     int GetIntelligence();
     bool GetNeedCounsel();
     int GetStress();
-    void SetStress(int stress);
     void AddStress(int stress);
 }
