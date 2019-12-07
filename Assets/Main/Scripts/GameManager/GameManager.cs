@@ -26,6 +26,47 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
+    private DungeonUi dungeonUiManager;
+    public DungeonUi DungeonUiManager
+    {
+        get
+        {
+            if (dungeonUiManager == null)
+            {
+                dungeonUiManager = GameObject.FindObjectOfType(typeof(DungeonUi)) as DungeonUi;
+                if (!dungeonUiManager)
+                {
+                    GameObject container = new GameObject();
+                    container.name = "DungeonUi";
+                    dungeonUiManager = container.AddComponent(typeof(DungeonUi)) as DungeonUi;
+                }
+            }
+
+            return dungeonUiManager;
+        }
+    }
+
+
+    private HireManager hireManager;
+    public HireManager HireManager
+    {
+        get
+        {
+            if (hireManager == null)
+            {
+                hireManager = GameObject.FindObjectOfType(typeof(HireManager)) as HireManager;
+                if (!hireManager)
+                {
+                    GameObject container = new GameObject();
+                    container.name = "HireManager";
+                    hireManager = container.AddComponent(typeof(HireManager)) as HireManager;
+                }
+            }
+
+            return hireManager;
+        }
+    }
+
     private ResourceManager resourceManager;
     public ResourceManager ResourceManager
     {
@@ -88,25 +129,6 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
-    private EventManager eventManager;
-    public EventManager EventManager
-    {
-        get
-        {
-            if (eventManager == null)
-            {
-                eventManager = GameObject.FindObjectOfType(typeof(EventManager)) as EventManager;
-                if (!eventManager)
-                {
-                    GameObject container = new GameObject();
-                    container.name = "EventManager";
-                    eventManager = container.AddComponent(typeof(EventManager)) as EventManager;
-                }
-            }
-
-            return eventManager;
-        }
-    }
     #endregion
 
     #region Variables
