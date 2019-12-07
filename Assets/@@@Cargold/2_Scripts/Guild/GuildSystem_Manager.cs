@@ -64,7 +64,8 @@ public class GuildSystem_Manager : MonoBehaviour
     [Button]
     public void Activate_Func()
     {
-        guildObj.SetActive(true);
+    guildObj.SetActive(true);
+    //guildObj.GetComponent<UIPopupTween>().PlayTween();
 
         if(isReserveElemReset == true)
         {
