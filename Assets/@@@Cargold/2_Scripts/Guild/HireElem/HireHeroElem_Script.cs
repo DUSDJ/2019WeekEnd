@@ -12,6 +12,7 @@ public class HireHeroElem_Script : MonoBehaviour, IGeneratedByPoolingSystem, IWh
     public string heroName;
     public int heroLevel;
     public int hireCost;
+    public bool isHirable;
 
     public void Init_Func()
     {
@@ -25,6 +26,7 @@ public class HireHeroElem_Script : MonoBehaviour, IGeneratedByPoolingSystem, IWh
         this.heroName = _heroData.heroName;
         this.heroLevel = _heroData.heroLevel;
         this.hireCost = _heroData.hireCost;
+        this.isHirable = true;
 
         Sprite _portraitSprite = DataBase_Manager.Instance.hero.heroDataDic.GetValue_Func(_heroType).portraitSprite;
         string _title = StringBuilder_C.Append_Func("Lv. ", this.heroLevel.ToString(), " ", heroName);
@@ -32,7 +34,16 @@ public class HireHeroElem_Script : MonoBehaviour, IGeneratedByPoolingSystem, IWh
     }
     public void SetSoldOut_Func()
     {
-        viewClass.SoldOut_Func();
+        if(isHirable == true)
+        {
+            this.isHirable = false;
+
+            viewClass.SoldOut_Func();
+        }
+        else
+        {
+            Debug_C.Error_Func("?");
+        }
     }
 
     public void Deactivate_Func()
