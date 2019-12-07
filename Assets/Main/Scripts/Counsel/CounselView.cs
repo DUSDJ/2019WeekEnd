@@ -20,7 +20,5 @@ public class CounselView : MonoBehaviour
         this.body.text = body;
         this.selectionControllers[0].UpdateText(selection1);
         this.selectionControllers[1].UpdateText(selection2);
-
-        StartCoroutine(PopupEffect());
     }
 }
