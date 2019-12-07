@@ -9,26 +9,20 @@ public class UIPopupTween : MonoBehaviour
 
   void OnEnable()
   {
+    transform.localScale = Vector3.zero;
     seq.Restart();
-    PlayTween();
+    OpenTween();
   }
 
-  public void PlayTween()
+  public void OpenTween()
   {
     seq = DOTween.Sequence()
     .SetAutoKill(false)
-    .OnStart(() =>
-    {
-      transform.localScale = Vector3.zero;
-      //GetComponent<CanvasGroup>().alpha = 1.0f;
-    })
     .Append(transform.DOScale(1, 0.3f).SetEase(Ease.InOutBack));
-    //.Join(GetComponent<CanvasGroup>().DOFade(1, 0.3f))
-    //.SetDelay(0.1f);
   }
 
-  public void ReverseTween()
+  public void CloseTween()
   {
-    seq.Rewind();
+    seq.OnRewind(() => gameObject.SetActive(false)).PlayBackwards();
   }
 }

@@ -65,7 +65,6 @@ public class GuildSystem_Manager : MonoBehaviour
     public void Activate_Func()
     {
     guildObj.SetActive(true);
-    //guildObj.GetComponent<UIPopupTween>().PlayTween();
 
         if(isReserveElemReset == true)
         {
@@ -133,7 +132,8 @@ public class GuildSystem_Manager : MonoBehaviour
 
     public void Deactivate_Func()
     {
-        guildObj.SetActive(false);
+    guildObj.GetComponent<UIPopupTween>().CloseTween();
+    //guildObj.SetActive(false);
     }
 
     private void CallDel_DayPass_Func(int _currentDay)
