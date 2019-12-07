@@ -11,6 +11,7 @@ public class CounselModel
     public string Title;
     public string Body;
     public string[] Selections;
+    public CounselSelectionParameter[] SelectionParams;
 }
 
 

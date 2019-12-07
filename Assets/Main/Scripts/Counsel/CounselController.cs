@@ -19,6 +19,21 @@ public class CounselController
 
     public void UpdateView()
     {
-        view.UpdateView(model.Title, model.Body, model.Selections[0], model.Selections[1]);
+        view.UpdateView(model.Title, model.Body, model.Selections[0], model.Selections[1]
+            , UpdateCharacter);
+    }
+
+    public void UpdateCharacter(int selectionIndex)
+    {
+        switch (model.SelectionParams[selectionIndex].parameterType)
+        {
+            case ParameterType.StressIncrease:
+                model.Hero.Stress += model.SelectionParams[selectionIndex].parameterValue;
+                break;
+
+            case ParameterType.StressDecrease:
+                model.Hero.Stress -= model.SelectionParams[selectionIndex].parameterValue;
+                break;
+        }
     }
 }

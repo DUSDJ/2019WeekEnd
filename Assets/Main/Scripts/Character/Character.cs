@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
+[Serializable]
 public class Character
 {
     #region Variables
@@ -18,6 +19,8 @@ public class Character
 
     public int Stress; // 스트레스
     public int Cost; // 고용비용
+
+    public bool needCounsel = false;
 
     public Resume resume;
 
