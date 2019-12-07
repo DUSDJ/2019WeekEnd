@@ -99,5 +99,7 @@ public class TimeSystem_Manager : MonoBehaviour
         {
             isTimeRunning = false;
         }
+
+        Debug_C.Log_Func("isTimeRunning : " + isTimeRunning);
     }
 }

@@ -43,6 +43,7 @@ public class GameSystem_Manager : MonoBehaviour
         yield return fieldSystem_Manager.Init_Cor(1);
 
         TimeSystem_Manager.Instance.Activate_Func();
+        FieldSystem_Manager.Instance.Activate_Func();
 
         yield break;
     }

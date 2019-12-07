@@ -66,10 +66,11 @@ public class DataBase_Manager : MonoBehaviour
 
         public float[] levelRewardBonusArr;
 
+        [System.Serializable]
         public struct LevelData
         {
             public int needDay;
-            public int[] levelPerArr;
+            public int[] levelGeneratePerArr;
         }
     }
 

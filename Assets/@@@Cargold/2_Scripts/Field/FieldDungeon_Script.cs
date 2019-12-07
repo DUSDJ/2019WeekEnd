@@ -35,23 +35,29 @@ public class FieldDungeon_Script : FieldIcon_Script
         this.lastTime = _dungeonData.lastTime;
     }
 
-    public void TimeRunning_Func(float _runningTime)
+    public bool TryTimeRunning_Func(float _runningTime)
     {
         this.lastTime -= _runningTime;
 
         if(0f < this.lastTime)
         {
             viewClass.SetTimer_Func(this.lastTime / this.lastTimeMax);
+
+            return false;
         }
         else
         {
+            this.Deactivate_Func();
 
+            return true;
         }
     }
 
     public void Deactivate_Func()
     {
+        viewClass.Deactivate_Func();
 
+        FieldSystem_Manager.Instance.TimeOutDungeon_Func(this);
     }
 
     public struct DungeonData

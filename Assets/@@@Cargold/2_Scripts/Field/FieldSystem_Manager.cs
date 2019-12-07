@@ -36,22 +36,9 @@ public class FieldSystem_Manager : MonoBehaviour
 
     public void Activate_Func()
     {
-        StartCoroutine(GenerateDungeon_Cor());
+        GenerateDungeon_Func(1);
     }
-
-    private IEnumerator GenerateDungeon_Cor()
-    {
-        while (true)
-        {
-            if(false)
-            {
-
-            }
-
-            yield return null;
-        }
-    }
-
+    
     public void SelectedIcon_Func(FieldIcon_Script _fieldIconClass)
     {
         switch (_fieldIconClass.FieldIconType)
@@ -79,8 +66,14 @@ public class FieldSystem_Manager : MonoBehaviour
     }
     public void CallDel_PassDay_Func(int _currentDay)
     {
-        if (Random_C.CheckPercent_Func(2) == false) return;
+        if (Random_C.CheckPercent_Func(2) == true)
+            this.GenerateDungeon_Func(_currentDay);
 
+        this.GenerateDungeon_Func(_currentDay);
+    }
+
+    private void GenerateDungeon_Func(int _currentDay)
+    {
         int _maxDay = TimeSystem_Manager.Instance.MaxDay;
 
         DataBase_Manager.Dungeon _dungeonClass = DataBase_Manager.Instance.dungeon;
@@ -88,7 +81,7 @@ public class FieldSystem_Manager : MonoBehaviour
         DataBase_Manager.Dungeon.LevelData _selectedlevelData = new DataBase_Manager.Dungeon.LevelData();
         foreach (DataBase_Manager.Dungeon.LevelData _levelData in _dungeonClass.levelDataArr)
         {
-            if(_currentDay < _levelData.needDay)
+            if (_currentDay < _levelData.needDay)
             {
                 _selectedlevelData = _levelData;
                 break;
@@ -96,11 +89,11 @@ public class FieldSystem_Manager : MonoBehaviour
         }
 
         DungeonLevel _dungeonLevel = DungeonLevel.VeryHard;
-        for (int i = 0; i < _selectedlevelData.levelPerArr.Length; i++)
+        for (int i = 0; i < _selectedlevelData.levelGeneratePerArr.Length; i++)
         {
-            int _levelPer = _selectedlevelData.levelPerArr[i];
-            
-            if(Random_C.CheckPercent_Func(_levelPer) == true)
+            int _levelPer = _selectedlevelData.levelGeneratePerArr[i];
+
+            if (Random_C.CheckPercent_Func(_levelPer) == true)
             {
                 _dungeonLevel = (DungeonLevel)(i + 1);
                 break;
@@ -124,15 +117,31 @@ public class FieldSystem_Manager : MonoBehaviour
         _dungeonData.passDayMin = 3;
         _dungeonData.passDayMax = 5;
         _dungeonData.lastTime = DataBase_Manager.Instance.dungeon.dungeonLastTime;
-        
+
+        Transform _pivotTrf = dungeonSpawnPosTrfArr.GetRandItem_Func();
+        _fieldDungeonClass.transform.SetParent(_pivotTrf);
+        _fieldDungeonClass.transform.localPosition = Vector3.zero;
+        _fieldDungeonClass.transform.localScale = Vector3.one;
         _fieldDungeonClass.Activate_Func(_dungeonData);
+
+        fieldDungeonList.AddNewItem_Func(_fieldDungeonClass);
     }
 
     private void CallDel_TimeRunning_Func(float _runningTime)
     {
-        foreach (FieldDungeon_Script _fieldDungeonClass in fieldDungeonList)
+        FieldDungeon_Script _fieldDungeonClass = null;
+        for (int i = 0; i < fieldDungeonList.Count;)
         {
-            _fieldDungeonClass.TimeRunning_Func(_runningTime);
+            if(_fieldDungeonClass != fieldDungeonList[i])
+            {
+                _fieldDungeonClass = fieldDungeonList[i];
+                if (_fieldDungeonClass.TryTimeRunning_Func(_runningTime) == false)
+                    i++;
+            }
+            else
+            {
+                Debug_C.Error_Func("?");
+            }
         }
     }
 
