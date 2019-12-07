@@ -32,18 +32,18 @@ public class HeroManager : MonoBehaviour
         }
     }
 
-    public void AddHero(Character chara)
+    public bool AddHero(Character chara)
     {
         if (HiredCharacters.Count >= GameManager.Instance.MaxHero)
         {
             Debug.Log("MaxHero");
-            return;
+            return false;
         }
 
         if(chara.Cost > GameManager.Instance.ResourceManager.Gold)
         {
             Debug.Log("No Money");
-            return;
+            return false;
         }
         else
         {
@@ -54,6 +54,8 @@ public class HeroManager : MonoBehaviour
         HiredCharacters.Add(chara);
 
         svc.UpdateUI();
+
+        return true;
     }
 
 }

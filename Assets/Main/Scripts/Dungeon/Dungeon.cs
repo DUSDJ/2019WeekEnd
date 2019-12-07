@@ -5,12 +5,19 @@ using UnityEngine.EventSystems;
 
 public class Dungeon : MonoBehaviour, IPointerClickHandler
 {
-    public Sprite DungeonSprite;
     private DungeonManager DGManager;
+
+    public Sprite DungeonSprite;
+    public Sprite TorsoImage;
+    public string dungeonName;
+    public int hardness;
+    public Vector2 rewardRange;
+    public Vector2 stressRange;
+    public Vector2 timeRange;
+
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        Debug.Log("DD");
         DGManager.DungeonUI(true, DungeonSprite);
     }
 

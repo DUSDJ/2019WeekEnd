@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 public enum CharacterJob
 {
-    Job1,
-    Job2,
-    Job3,
-
+    Barbarian,
+    Nun,
+    Pirate,
+    PirateW,
 }
