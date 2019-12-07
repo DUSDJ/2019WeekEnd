@@ -31,6 +31,11 @@ public class SoundManager : Singleton<SoundManager>, INeedInitialize
     public delegate void CallBack();
     CallBack BGMendCallBack;
 
+  void Start()
+  {
+    ChangeBGM("BGM");
+  }
+
     void OnEnable()
     {
         float volume = PlayerPrefs.GetFloat("volumeBGM", 1);

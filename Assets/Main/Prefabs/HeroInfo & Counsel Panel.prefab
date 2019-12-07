@@ -3763,6 +3763,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da8fcafe6fa57a7429cb7e8af0ce78a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  index: 0
   textUi: {fileID: 3157673359777880471}
 --- !u!1 &3157673359777880469
 GameObject:
@@ -5023,6 +5024,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da8fcafe6fa57a7429cb7e8af0ce78a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  index: 0
   textUi: {fileID: 7967724909842992674}
 --- !u!1 &5097172433649260902
 GameObject:
@@ -5086,6 +5088,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   background: {fileID: 5097172433649260901}
   portrait: {fileID: 0}
+  portraitMask: {fileID: 0}
   lines:
   - {fileID: 5097172435356456997}
   - {fileID: 5097172434658644827}
@@ -5314,6 +5317,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5097172434040295594}
   - component: {fileID: 1898641627}
+  - component: {fileID: -5555063384771115612}
+  - component: {fileID: 8330089856491103824}
   m_Layer: 5
   m_Name: HeroInfo & Counsel Panel
   m_TagString: Untagged
@@ -5367,6 +5372,30 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!225 &-5555063384771115612
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5097172434040295597}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!114 &8330089856491103824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5097172434040295597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cedf4fa2617a0c4db6b22c8910f63a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5097172434427316525
 GameObject:
   m_ObjectHideFlags: 0
@@ -5547,6 +5576,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da8fcafe6fa57a7429cb7e8af0ce78a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  index: 0
   textUi: {fileID: 3157673360124936000}
 --- !u!1 &5097172434658644829
 GameObject:

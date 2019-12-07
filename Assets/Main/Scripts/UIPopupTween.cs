@@ -9,16 +9,19 @@ public class UIPopupTween : MonoBehaviour
 
   void OnEnable()
   {
-    transform.localScale = Vector3.zero;
-    seq.Restart();
-    OpenTween();
+    //transform.localScale = Vector3.zero;
+    //seq.Restart();
+    //OpenTween();
   }
 
   public void OpenTween()
   {
+    GetComponent<RectTransform>().DOScale(0f, 0.01f);
+
     seq = DOTween.Sequence()
     .SetAutoKill(false)
     .Append(transform.DOScale(1, 0.3f).SetEase(Ease.InOutBack));
+    
   }
 
   public void CloseTween()
