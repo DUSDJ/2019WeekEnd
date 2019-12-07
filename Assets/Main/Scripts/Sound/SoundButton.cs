@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 
 [RequireComponent(typeof(Button))]
-public class PlayAudioClip : MonoBehaviour
+public class SoundButton : MonoBehaviour
 {
     public string audioCilpFileName;
     public Button button;
