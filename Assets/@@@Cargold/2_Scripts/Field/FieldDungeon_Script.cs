@@ -74,6 +74,20 @@ public class FieldDungeon_Script : FieldIcon_Script
         DungeonData GetDungeonData();
     }
 
+    public struct DungeonResultData
+    {
+        public DungeonLevel dungeonLevel;
+        public int reward;
+        public int stress;
+        public int passDay;
+    }
+
+    public interface IDungeonReseultDataBus
+    {
+        DungeonResultData GetDungeonResultData();
+        int GetStress();
+    }
+
     public enum DungeonLevel
     {
         VeryEasy = 0,

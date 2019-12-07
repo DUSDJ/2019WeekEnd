@@ -20,4 +20,6 @@ public interface ICharacter
     bool GetNeedCounsel();
     int GetStress();
     void AddStress(int stress);
+
+    Sprite GetIcon();
 }

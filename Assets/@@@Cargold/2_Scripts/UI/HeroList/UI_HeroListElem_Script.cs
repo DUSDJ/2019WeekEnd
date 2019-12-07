@@ -63,4 +63,9 @@ public class UI_HeroListElem_Script : MonoBehaviour, IGeneratedByPoolingSystem, 
     public int GetStress() => this.userHeroData.stressPoint;
     public void AddStress(int _stress) => this.userHeroData.stressPoint += _stress;
     HeroType ICharacter.GetJob() => this.userHeroData.heroType;
+
+    public Sprite GetIcon()
+    {
+        return null;
+    }
 }

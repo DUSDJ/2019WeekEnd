@@ -232,18 +232,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7dee4a67a7529e4e8b2d61cea21fdc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nowSelectedHero:
-    Job: 0
-    Name: 
-    Level: 0
-    Strength: 0
-    Agility: 0
-    Intelligence: 0
-    Stress: 0
-    Cost: 0
-    needCounsel: 0
-    Portrait: {fileID: 0}
-    Torso: {fileID: 0}
   counselDatabase:
   - Title: "\uBBFF\uC74C\uC758 \uBC30\uC2E0"
     Body: "\uB09C \uADC0\uACF5\uC744 \uBBFF\uACE0 \uADC0\uACF5\uC758 \uCE7C\uC774\uB418\uC5B4
@@ -457,18 +445,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8eb54a81751a8ff4a853c047b083493e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nowSelectedHero:
-    Job: 0
-    Name: 
-    Level: 0
-    Strength: 0
-    Agility: 0
-    Intelligence: 0
-    Stress: 0
-    Cost: 0
-    needCounsel: 0
-    Portrait: {fileID: 0}
-    Torso: {fileID: 0}
   counselManager: {fileID: 91877430}
   heroInfoPanel: {fileID: 5097172435358891782}
   heroInfoView: {fileID: 516878826}
@@ -716,18 +692,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heroInfoManager: {fileID: 977308417}
-  hero:
-    Job: 2
-    Name: "\uC774\uBBF8\uB098\uC2DC"
-    Level: 5
-    Strength: 100
-    Agility: 0
-    Intelligence: 50
-    Stress: 50
-    Cost: 0
-    needCounsel: 1
-    Portrait: {fileID: 0}
-    Torso: {fileID: 0}
 --- !u!114 &2052246139
 MonoBehaviour:
   m_ObjectHideFlags: 0
