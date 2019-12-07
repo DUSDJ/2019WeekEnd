@@ -5,7 +5,25 @@ using UnityEngine;
 public class HireManager : MonoBehaviour
 {
     public List<Character> WaitingCharacters;
-    public Dictionary<CharacterJob, List<string>> NameDic; 
+    public Dictionary<CharacterJob, List<string>> NameDic;
+    public int MaxWaitingHero = 3;
+
+    private HireSlot selectedSlot;
+    public HireSlot SelectedSlot
+    {
+        set
+        {
+            selectedSlot = value;
+
+            if (value == null)
+            {
+                return;
+            }
+            GameManager.Instance.HouseManager.UpdateHireResume(value.chara);
+        }
+        get { return selectedSlot; }
+    }
+    public HireSlot isClicked;
 
     // Start is called before the first frame update
     void Start()
@@ -13,19 +31,22 @@ public class HireManager : MonoBehaviour
         WaitingCharacters = new List<Character>();
         NameDic = new Dictionary<CharacterJob, List<string>>();
 
+
         /* Sample Init */
         Init();
+        Reroll();
     }
 
     public void Init()
     {
+        /* DB 읽어서 직업 맞춰 이름 저장해야 함 */
         List<string> nameList = new List<string>();
         nameList.Add("크로아딘1");
         nameList.Add("크로아딘2");
         nameList.Add("크로아딘3");
         nameList.Add("크로아딘4");
         nameList.Add("크로아딘5");
-        NameDic.Add(CharacterJob.Job1, nameList);
+        NameDic.Add((CharacterJob)0, nameList);
 
         nameList = new List<string>();
         nameList.Add("아케이니스1");
@@ -33,7 +54,7 @@ public class HireManager : MonoBehaviour
         nameList.Add("아케이니스3");
         nameList.Add("아케이니스4");
         nameList.Add("아케이니스5");
-        NameDic.Add(CharacterJob.Job2, nameList);
+        NameDic.Add((CharacterJob)1, nameList);
 
         nameList = new List<string>();
         nameList.Add("조니 뎁1");
@@ -41,7 +62,15 @@ public class HireManager : MonoBehaviour
         nameList.Add("조니 뎁3");
         nameList.Add("조니 뎁4");
         nameList.Add("조니 뎁5");
-        NameDic.Add(CharacterJob.Job3, nameList);
+        NameDic.Add((CharacterJob)2, nameList);
+
+        nameList = new List<string>();
+        nameList.Add("스완1");
+        nameList.Add("스완2");
+        nameList.Add("스완3");
+        nameList.Add("스완4");
+        nameList.Add("스완5");
+        NameDic.Add((CharacterJob)3, nameList);
     }
 
     // Update is called once per frame
@@ -49,7 +78,7 @@ public class HireManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.S))
         {
-            CharaGenerator();
+            Reroll();
         }
     }
 
@@ -68,23 +97,59 @@ public class HireManager : MonoBehaviour
         r = Random.Range(0, nameList.Count - 1);
         chara.Name = nameList[r];
 
+        // Sprite Set
+        Sprite portrait = Resources.Load<Sprite>("Sprites/"+ job.ToString() + "Portrait");
+        Sprite torso = Resources.Load<Sprite>("Sprites/" + job.ToString() + "Torso");
+        chara.Portrait = portrait;
+        chara.Torso = torso;
 
+        /* cost 공식은 아직*/
+        int cost = Random.Range(10, 30);
+        chara.Cost = cost;
+        /* 능력치 */
+        int strength = Random.Range(1, 60);
+        chara.Strength = strength;
+        int intelligence = Random.Range(1, 60);
+        chara.Intelligence = intelligence;
+        int agility = Random.Range(1, 60);
+        chara.Agility = agility;
+
+        int level = Random.Range(1, 3);
+        chara.Level = level;
+        int stress = Random.Range(0, 50);
+        chara.Stress = stress;
 
         return chara;
     }
+
+    
 
     public void Reroll()
     {
         WaitingCharacters = new List<Character>();
 
-        /*
-         1. 직군 중 하나를 고른다.
-         2. 직군별 이름 중 하나를 고른다.
-         3. 직군별 초상화, 흉상 설정
-         4. 능력치 등 설정
-         */
+        for(int i=0; i< MaxWaitingHero; i++)
+        {
+            WaitingCharacters.Add(CharaGenerator());
+        }
+    }
 
-        //Character chara = new Character("Name", )
-        //WaitingCharacters.Add();
+    public void HireButton()
+    {
+        if (GameManager.Instance.HeroManager.AddHero(selectedSlot.chara))
+        {
+            WaitingCharacters.Remove(selectedSlot.chara);
+            GameManager.Instance.HouseManager.UpdateHireMenu();
+
+            selectedSlot.HighLight.SetActive(false);
+            selectedSlot = null;
+            isClicked = null;
+            GameManager.Instance.HouseManager.InitHireResume();
+        }
+        else
+        {
+            Debug.Log("No Gold");
+        }
+
     }
 }

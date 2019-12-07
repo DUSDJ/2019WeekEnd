@@ -51,5 +51,28 @@ public class Character
 
     // Generation Constructor
 
+    public string CharacterJobToString()
+    {
+        string result = "";
 
+        switch (Job)
+        {
+            case CharacterJob.Barbarian:
+                result = "야만전사";
+                break;
+            case CharacterJob.Nun:
+                result = "북방의 여사제";
+                break;
+            case CharacterJob.Pirate:
+                result = "해적";
+                break;
+            case CharacterJob.PirateW:
+                result = "여해적";
+                break;
+            default:
+                break;
+        }
+
+        return result;
+    }
 }

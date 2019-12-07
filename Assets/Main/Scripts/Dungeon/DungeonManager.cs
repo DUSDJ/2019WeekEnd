@@ -73,7 +73,7 @@ public class DungeonManager : MonoBehaviour
     public void GoToDungeon()
     {
         // 캐릭터들을 통해 이벤트 생성
-        GameManager.Instance.EventManager.CreateEvent(CharacterList);
+        //GameManager.Instance.EventManager.CreateEvent(CharacterList);
             
 
         // 초기화
