@@ -20,8 +20,8 @@ public class HeroInfoController
     public void UpdateView()
     {
         view.UpdateView(
-            model.Hero.Job.ToString(), model.Hero.Level, model.Hero.Name,
-            model.Hero.Strength, model.Hero.Agility, model.Hero.Intelligence, model.Hero.Stress,
-            null, model.Hero.needCounsel);
+            model.Hero.GetJob().ToString(), model.Hero.GetLevel(), model.Hero.GetName(),
+            model.Hero.GetStrength(), model.Hero.GetAgility(), model.Hero.GetIntelligence(), model.Hero.GetStress(),
+            null, model.Hero.GetNeedCounsel());
     }
 }

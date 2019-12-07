@@ -9,16 +9,21 @@ public class FieldDungeon_View_Script : MonoBehaviour
 
     public void Init_Func()
     {
-
+        Deactivate_Func();
     }
 
     public void Activate_Func()
     {
-
+        this.gameObject.SetActive(true);
     }
 
     public void SetTimer_Func(float _fillAmount)
     {
         timerImg.fillAmount = _fillAmount;
+    }
+
+    public void Deactivate_Func()
+    {
+        this.gameObject.SetActive(false);
     }
 }
