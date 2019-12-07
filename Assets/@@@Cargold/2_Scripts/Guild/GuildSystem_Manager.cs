@@ -100,7 +100,6 @@ public class GuildSystem_Manager : MonoBehaviour
 
         elemClassList.AddNewItem_Func(_hireHeroElemClass);
     }
-    
     public void SelectedElem_Func(HireHeroElem_Script _elemClass)
     {
         this.whichOneClass.Selected_Func(_elemClass);
@@ -109,16 +108,26 @@ public class GuildSystem_Manager : MonoBehaviour
         HeroType _heroType = _elemClass.heroType;
         heroData.heroType = _heroType;
         heroData.job = DataBase_Manager.Instance.hero.heroDataDic.GetValue_Func(_heroType).job;
+        heroData.heroName = _elemClass.heroName;
         heroData.heroDesc = "";
         heroData.hireCost = _elemClass.hireCost;
+        heroData.herolevel = _elemClass.heroLevel;
+        heroData.isHirable = _elemClass.isHirable;
+
         this.resumeClass.Activate_Func(heroData);
     }
-
     public void DeactivateElem_Func(HireHeroElem_Script _elemClass)
     {
         this.elemClassList.Remove_Func(_elemClass);
 
         this.poolingSystem.Return_Func(_elemClass, false);
+    }
+
+    public void HiredselectedHero_Func()
+    {
+        HireHeroElem_Script _selectedElemClass = this.whichOneClass.GetWhichOne_Func();
+
+        _selectedElemClass.SetSoldOut_Func();
     }
 
     public void Deactivate_Func()
@@ -130,6 +139,10 @@ public class GuildSystem_Manager : MonoBehaviour
     {
         if(isReserveElemReset == false)
             isReserveElemReset = (_currentDay % this.guildElemResetDayCondition) == 0;
+    }
+    public void CallBtn_Exit_Func()
+    {
+        this.Deactivate_Func();
     }
 
     private class GetHeroTypeRandom

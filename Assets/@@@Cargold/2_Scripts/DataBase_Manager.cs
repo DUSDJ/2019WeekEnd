@@ -9,6 +9,7 @@ public class DataBase_Manager : MonoBehaviour
     public static DataBase_Manager Instance;
 
     public Hero hero;
+    public Test test;
 
     public IEnumerator Init_Cor()
     {
@@ -48,5 +49,11 @@ public class DataBase_Manager : MonoBehaviour
             public string job;
             public string[] nameArr;
         }
+    }
+
+    [System.Serializable]
+    public class Test
+    {
+        public int startGold;
     }
 }
