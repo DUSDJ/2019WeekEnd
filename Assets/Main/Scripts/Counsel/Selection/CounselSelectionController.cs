@@ -9,9 +9,14 @@ public class CounselSelectionController : MonoBehaviour
     public TextMeshProUGUI textUi;
     public UnityAction<int> mouseDownEvent;
 
+    public AnimationClip clip;
+
     public void OnClick()
     {
         Debug.Log("!");
+
+        HeroInfoManager.Instance.counselAni.Play_Func(clip);
+        HeroInfoManager.Instance.counselManager.counselView.portraitMask.enabled = true;
 
         if (mouseDownEvent != null)
             mouseDownEvent(index);

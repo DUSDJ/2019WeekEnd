@@ -3003,7 +3003,7 @@ RectTransform:
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 5097172433649260900}
-  m_RootOrder: 8
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3734,7 +3734,7 @@ RectTransform:
   - {fileID: 3157673359777880468}
   - {fileID: 3157673358988276388}
   m_Father: {fileID: 5097172433649260900}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3832,8 +3832,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da8fcafe6fa57a7429cb7e8af0ce78a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  index: 0
+  index: 2
   textUi: {fileID: 3157673359777880471}
+  clip: {fileID: 7400000, guid: 5c4f4b7d96b0f5a448b369d8420070fa, type: 2}
 --- !u!1 &3157673359777880469
 GameObject:
   m_ObjectHideFlags: 0
@@ -4995,7 +4996,7 @@ RectTransform:
   - {fileID: 7967724909842992673}
   - {fileID: 3157673360068169830}
   m_Father: {fileID: 5097172433649260900}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5095,6 +5096,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 0
   textUi: {fileID: 7967724909842992674}
+  clip: {fileID: 7400000, guid: 5c4f4b7d96b0f5a448b369d8420070fa, type: 2}
 --- !u!1 &5097172433649260902
 GameObject:
   m_ObjectHideFlags: 0
@@ -5131,10 +5133,10 @@ RectTransform:
   - {fileID: 5097172435356456996}
   - {fileID: 5097172434658644826}
   - {fileID: 5097172433949998604}
+  - {fileID: 3157673358901231444}
   - {fileID: 5097172433614797188}
   - {fileID: 5097172434644117251}
   - {fileID: 3157673359661799718}
-  - {fileID: 3157673358901231444}
   m_Father: {fileID: 5097172434040295594}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5484,6 +5486,7 @@ Animation:
   m_Animation: {fileID: 7400000, guid: 1462f02c90fd5a54a9a54aa2138d9b55, type: 2}
   m_Animations:
   - {fileID: 7400000, guid: 1462f02c90fd5a54a9a54aa2138d9b55, type: 2}
+  - {fileID: 7400000, guid: 5c4f4b7d96b0f5a448b369d8420070fa, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
@@ -5570,7 +5573,7 @@ RectTransform:
   - {fileID: 3157673360124936001}
   - {fileID: 3157673359834598484}
   m_Father: {fileID: 5097172433649260900}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5668,8 +5671,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da8fcafe6fa57a7429cb7e8af0ce78a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  index: 0
+  index: 1
   textUi: {fileID: 3157673360124936000}
+  clip: {fileID: 7400000, guid: 5c4f4b7d96b0f5a448b369d8420070fa, type: 2}
 --- !u!1 &5097172434658644829
 GameObject:
   m_ObjectHideFlags: 0

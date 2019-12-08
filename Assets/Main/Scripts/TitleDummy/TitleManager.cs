@@ -30,20 +30,19 @@ public class TitleManager : MonoBehaviour
 
         tmpMat[0].SetFloat("_FaceDilate", -1f);
         tmpMat[0].SetFloat("_OutlineSoftness", 0f);
-
+        tmpMat[0].SetFloat("_OutlineWidth", 0.35f);
         tmpMat2[0].SetFloat("_FaceDilate", -1f);
         tmpMat2[0].SetFloat("_OutlineSoftness", 0f);
+        tmpMat2[0].SetFloat("_OutlineWidth", 0.35f);
 
 
         for (int i = imgs.Length-1; i > 0; i--)
         {
             c = imgs[i].color;
-            Color tc = c;
+            Color tc = new Color(c.r, c.g, c.b, c.a);
             tc.a = 0;
             imgs[i].color = tc;
         }
-
-
         
         StartCoroutine(Shader());
     }
@@ -54,7 +53,6 @@ public class TitleManager : MonoBehaviour
         if (trigger && Input.anyKeyDown)
         {
             
-
             SceneManager.LoadScene(1);
         }
     }
@@ -74,9 +72,9 @@ public class TitleManager : MonoBehaviour
 
             t += Time.deltaTime;
 
-            if (t > 0.2f)
+            if (t >= 0.2f)
             {
-                imgs[n].DOColor(c, 0.3f);
+                imgs[n].color = c;
                 n += 1;
                 t = 0;
             }
@@ -84,11 +82,11 @@ public class TitleManager : MonoBehaviour
             yield return null;
         }
 
-        
+        yield return null;
 
         t = 0;
         n = 4;
-        Color tc = c;
+        Color tc = new Color(c.r, c.g, c.b, c.a);
         tc.a = 0;
 
         foreach (var item in anim)
@@ -96,7 +94,8 @@ public class TitleManager : MonoBehaviour
             item.SetTrigger("stop");
             item.gameObject.SetActive(false);
         }
-        yield return new WaitForSeconds(1.0f);
+
+        yield return new WaitForSeconds(1.5f);
 
         while (true)
         {
@@ -134,6 +133,7 @@ public class TitleManager : MonoBehaviour
             t += Time.deltaTime;
             tmpMat[0].SetFloat("_FaceDilate", Mathf.Lerp(-0.35f, 0.05f, t/h));
             tmpMat[0].SetFloat("_OutlineSoftness", Mathf.Lerp(0, 0.6f, t / h));
+            
             yield return null;
         }
 

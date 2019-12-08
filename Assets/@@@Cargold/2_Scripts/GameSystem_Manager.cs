@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cargold.DataStructure;
+using UnityEngine.UI;
 
 public class GameSystem_Manager : MonoBehaviour
 {
@@ -22,9 +24,13 @@ public class GameSystem_Manager : MonoBehaviour
     public UI_Bottom_Resource_Manager uI_Bottom_Resource_Manager;
     public UI_HeroList_Manager uI_HeroList_Manager;
 
+    public Image loadingImg;
+
     private void Awake()
     {
         Instance = this;
+
+        loadingImg.gameObject.SetActive(true);
 
         StartCoroutine(Init_Cor());
     }
@@ -56,6 +62,13 @@ public class GameSystem_Manager : MonoBehaviour
         FieldSystem_Manager.Instance.Activate_Func();
         UserControlSystem_Manager.Instance.GameStart_Func();
         UI_Time_Manager.Instance.GameStart_Func();
+
+        yield return Coroutine_C.GetWaitForSeconds_Cor(1f, delegate (float _p)
+        {
+            loadingImg.SetFade_Func(1f - _p);
+        });
+        loadingImg.SetFade_Func(0f);
+        loadingImg.gameObject.SetActive(false);
 
         yield break;
     }

@@ -137,7 +137,9 @@ public class UserHeroData
     }
     public void AddStress_Func(int _value)
     {
-        if(stressPoint + _value <= 100)
+        isNeedCounsel = Random_C.CheckPercent_Func(3);
+
+        if (stressPoint + _value <= 100)
         {
             stressPoint += _value;
         }

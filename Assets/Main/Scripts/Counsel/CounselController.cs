@@ -35,5 +35,6 @@ public class CounselController
                 model.Hero.AddStress(model.SelectionParams[selectionIndex].parameterValue);
                 break;
         }
+        view.gameObject.SetActive(false);
     }
 }
