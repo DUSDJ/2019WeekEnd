@@ -81,5 +81,6 @@ public class DataBase_Manager : MonoBehaviour
         public int startGold;
         public float dayPassTime;
         public int heroLvMax;
+        public int bossDay;
     }
 }

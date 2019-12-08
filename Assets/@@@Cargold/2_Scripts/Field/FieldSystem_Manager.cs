@@ -186,7 +186,7 @@ public class FieldSystem_Manager : MonoBehaviour
     {
         for (int i = 0; i < 3; i++)
         {
-            if (Random_C.CheckPercent_Func(2) == true)
+            if (Random_C.CheckPercent_Func(3) == true)
             {
                 this.GenerateDungeon_Func(_currentDay);
             }

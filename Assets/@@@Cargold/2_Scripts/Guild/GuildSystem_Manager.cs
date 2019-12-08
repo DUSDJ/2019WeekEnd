@@ -116,8 +116,11 @@ public class GuildSystem_Manager : MonoBehaviour
         heroData.heroName = _elemClass.heroName;
         heroData.heroDesc = "";
         heroData.hireCost = _elemClass.hireCost;
-        heroData.herolevel = _elemClass.heroLevel;
+        heroData.heroLevel = _elemClass.heroLevel;
         heroData.isHirable = _elemClass.isHirable;
+        heroData.str = UnityEngine.Random.Range(1, 100);
+        heroData.agi = UnityEngine.Random.Range(1, 100);
+        heroData.intel = UnityEngine.Random.Range(1, 100);
 
         this.resumeClass.Activate_Func(heroData);
     }
@@ -199,7 +202,7 @@ public class GuildSystem_Manager : MonoBehaviour
 
         public GetHeroTypeRandom()
         {
-            this.heroTypeArr = new HeroType[] { HeroType.Nun, HeroType.Barbarian, HeroType.Pirate, HeroType.PirateW, HeroType.Priest };
+            this.heroTypeArr = new HeroType[] { HeroType.Nun, HeroType.Barbarian, HeroType.Pirate, HeroType.PirateW, HeroType.Priest, HeroType.BarbarianW, HeroType.Drawf, HeroType.Knight };
         }
 
         public HeroType GetType_Func()
