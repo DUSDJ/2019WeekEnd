@@ -266,6 +266,7 @@ GameObject:
   - component: {fileID: 6386185017375405860}
   - component: {fileID: 511519504386529060}
   - component: {fileID: 95590182}
+  - component: {fileID: 5432978923185944239}
   m_Layer: 5
   m_Name: HeroSlot (1)
   m_TagString: Untagged
@@ -399,6 +400,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &5432978923185944239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 511519504386529063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ccd118ba22fb234a9c4ddaf338c9ace, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 0}
 --- !u!1 &953623931308325742
 GameObject:
   m_ObjectHideFlags: 0
@@ -1486,7 +1500,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2084164920983627019
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1711,6 +1725,7 @@ GameObject:
   - component: {fileID: 2084164921179195389}
   - component: {fileID: 2084164921179195386}
   - component: {fileID: 88832702}
+  - component: {fileID: 5374787835766528514}
   m_Layer: 5
   m_Name: Btn_Exit
   m_TagString: Untagged
@@ -1827,6 +1842,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &5374787835766528514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2084164921179195384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ccd118ba22fb234a9c4ddaf338c9ace, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 0}
 --- !u!1 &2084164921963010888
 GameObject:
   m_ObjectHideFlags: 0
@@ -1856,6 +1884,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2084164920983627019}
+  - {fileID: 528527684459289774}
   m_Father: {fileID: 2084164922026242372}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2044,6 +2073,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2084164922026242372}
   - component: {fileID: 2084164922026242370}
+  - component: {fileID: 6855975434553105038}
   m_Layer: 5
   m_Name: Popup_Dungeon DD
   m_TagString: Untagged
@@ -2129,6 +2159,18 @@ MonoBehaviour:
   - "\uB2E8\uC6D0\uB4E4\uC5D0\uAC90 \uD070 \uC2DC\uB828\uC774 \uB420 \uB4EF \uD569\uB2C8\uB2E4."
   - "\uB2E8\uC7A5\uB2D8\uC740 \uB2E8\uC6D0\uB4E4\uC744 \uC0AC\uC9C0\uB85C \uBAB0 \uC0DD\uAC01\uC785\uB2C8\uAE4C?"
   selectedSlot: {fileID: 0}
+--- !u!114 &6855975434553105038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2084164922026242373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cedf4fa2617a0c4db6b22c8910f63a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2084164922397815506
 GameObject:
   m_ObjectHideFlags: 0
@@ -3039,6 +3081,7 @@ GameObject:
   - component: {fileID: 8178104306122504860}
   - component: {fileID: 3573668799939847603}
   - component: {fileID: 3661048860140602905}
+  - component: {fileID: 2889485456757003484}
   m_Layer: 5
   m_Name: HeroSlot
   m_TagString: Untagged
@@ -3172,6 +3215,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &2889485456757003484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3573668799939847602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ccd118ba22fb234a9c4ddaf338c9ace, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 0}
 --- !u!1 &3987535625372556905
 GameObject:
   m_ObjectHideFlags: 0
@@ -3691,6 +3747,79 @@ MonoBehaviour:
   m_canvasRenderer: {fileID: 7102958427058193198}
   m_TextComponent: {fileID: 1663567202153185364}
   m_materialReferenceIndex: 1
+--- !u!1 &4921332531507232205
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 528527684459289774}
+  - component: {fileID: 5936260271332764503}
+  - component: {fileID: 8456626657213651338}
+  m_Layer: 5
+  m_Name: Image (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &528527684459289774
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4921332531507232205}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.1999999, y: 1.1999999, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2084164921963010891}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -251}
+  m_SizeDelta: {x: 1000, y: 1000}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &5936260271332764503
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4921332531507232205}
+  m_CullTransparentMesh: 0
+--- !u!114 &8456626657213651338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4921332531507232205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: d3abfd7ab736c9b41bafa34ecad3f201, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &4945695894994963202
 GameObject:
   m_ObjectHideFlags: 0
@@ -4154,6 +4283,7 @@ GameObject:
   - component: {fileID: 3321478554798188866}
   - component: {fileID: 6950806039048189003}
   - component: {fileID: 1633683953}
+  - component: {fileID: 6355019613477756620}
   m_Layer: 5
   m_Name: HeroSlot (3)
   m_TagString: Untagged
@@ -4287,6 +4417,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &6355019613477756620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6950806039048189002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ccd118ba22fb234a9c4ddaf338c9ace, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 0}
 --- !u!1 &6979554345650852805
 GameObject:
   m_ObjectHideFlags: 0
@@ -5263,6 +5406,7 @@ GameObject:
   - component: {fileID: 4857139230098503189}
   - component: {fileID: 5459167485963363269}
   - component: {fileID: 734924381}
+  - component: {fileID: 4408128076831736973}
   m_Layer: 5
   m_Name: Btn_GoToDungeon
   m_TagString: Untagged
@@ -5380,6 +5524,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &4408128076831736973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8640404686211277948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ccd118ba22fb234a9c4ddaf338c9ace, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 0}
 --- !u!1 &8794466620691444586
 GameObject:
   m_ObjectHideFlags: 0
@@ -5466,6 +5623,7 @@ GameObject:
   - component: {fileID: 4475213698045641295}
   - component: {fileID: 9086703252256609440}
   - component: {fileID: 452804187}
+  - component: {fileID: 4633805717365450526}
   m_Layer: 5
   m_Name: HeroSlot (2)
   m_TagString: Untagged
@@ -5599,6 +5757,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &4633805717365450526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9086703252256609443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ccd118ba22fb234a9c4ddaf338c9ace, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 0}
 --- !u!1 &9107420640162320216
 GameObject:
   m_ObjectHideFlags: 0
