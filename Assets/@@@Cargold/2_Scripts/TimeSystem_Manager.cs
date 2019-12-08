@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class TimeSystem_Manager : MonoBehaviour
 {
@@ -17,6 +18,8 @@ public class TimeSystem_Manager : MonoBehaviour
     
     public int MaxDay { get { return maxDay; } }
     public int CurrentDay { get => currentDay; }
+
+  public TextMeshProUGUI text;
 
     public IEnumerator Init_Cor()
     {
@@ -99,10 +102,12 @@ public class TimeSystem_Manager : MonoBehaviour
         if (isTimeRunning == false)
         {
             isTimeRunning = true;
+      text.text = "시간재생";
         }
         else
         {
             isTimeRunning = false;
-        }
+      text.text = "시간정지";
+    }
     }
 }

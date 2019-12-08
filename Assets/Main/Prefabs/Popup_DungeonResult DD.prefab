@@ -5546,6 +5546,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3521138735468793148}
   - component: {fileID: 2533104626632755642}
+  - component: {fileID: 1156126099102523240}
   m_Layer: 5
   m_Name: Popup_DungeonResult DD
   m_TagString: Untagged
@@ -5604,7 +5605,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fdf9435a8749854a881b1539b698b78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dungeonLevelText: {fileID: 3521138736346642813}
+  dungeonLevelText: {fileID: 2078889802960470505}
   stressText: {fileID: 3942262516663480018}
   passDayText: {fileID: 4555216468849603873}
   rewardText: {fileID: 1687699476738691288}
@@ -5619,6 +5620,18 @@ MonoBehaviour:
   - {fileID: 5814810299362872669}
   - {fileID: 4039522249203079792}
   - {fileID: 1450194826376635198}
+--- !u!114 &1156126099102523240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3521138735468793149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cedf4fa2617a0c4db6b22c8910f63a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3521138735629569706
 GameObject:
   m_ObjectHideFlags: 0
@@ -6117,6 +6130,7 @@ GameObject:
   - component: {fileID: 3521138736853105539}
   - component: {fileID: 3521138736853105541}
   - component: {fileID: 3521138736853105538}
+  - component: {fileID: 417099592}
   m_Layer: 5
   m_Name: Btn_Exit
   m_TagString: Untagged
@@ -6179,6 +6193,60 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &417099592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3521138736853105536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 3521138736853105538}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2533104626632755642}
+        m_MethodName: CallBtn_Close_Func
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3871988660598480398
 GameObject:
   m_ObjectHideFlags: 0
@@ -6455,7 +6523,7 @@ MonoBehaviour:
   m_material: {fileID: 0}
   m_sharedMaterial: {fileID: 0}
   m_isDefaultMaterial: 0
-  m_padding: 1.25
+  m_padding: 0
   m_canvasRenderer: {fileID: 8438189716263433210}
   m_TextComponent: {fileID: 2078889802960470505}
   m_materialReferenceIndex: 1
@@ -6829,7 +6897,7 @@ MonoBehaviour:
   m_material: {fileID: 0}
   m_sharedMaterial: {fileID: 0}
   m_isDefaultMaterial: 0
-  m_padding: 1.25
+  m_padding: 0
   m_canvasRenderer: {fileID: 8407971822965902647}
   m_TextComponent: {fileID: 3942262516663480018}
   m_materialReferenceIndex: 1
@@ -7400,7 +7468,7 @@ MonoBehaviour:
   m_material: {fileID: 0}
   m_sharedMaterial: {fileID: 0}
   m_isDefaultMaterial: 0
-  m_padding: 1.25
+  m_padding: 0
   m_canvasRenderer: {fileID: 7780940277405890426}
   m_TextComponent: {fileID: 4555216468849603873}
   m_materialReferenceIndex: 1
