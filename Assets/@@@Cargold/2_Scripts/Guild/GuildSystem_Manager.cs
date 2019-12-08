@@ -64,10 +64,10 @@ public class GuildSystem_Manager : MonoBehaviour
     [Button]
     public void Activate_Func()
     {
-    guildObj.SetActive(true);
-    guildObj.GetComponent<UIPopupTween>().OpenTween();
+        guildObj.SetActive(true);
+        //guildObj.GetComponent<UIPopupTween>().OpenTween();
 
-        if(isReserveElemReset == true)
+        if (isReserveElemReset == true)
         {
             isReserveElemReset = false;
 
@@ -82,7 +82,11 @@ public class GuildSystem_Manager : MonoBehaviour
             }
         }
 
-        whichOneClass.Selected_Func(this.elemClassList[0]);
+        this.SelectedElem_Func(this.elemClassList[0]);
+
+        UserControlSystem_Manager.Instance.SetState_Func(UserControlSystem_Manager.ControlState.Guild_Activate);
+
+        TimeSystem_Manager.Instance.Pause_Func();
     }
     private void GenerateElem_Func()
     {
@@ -124,17 +128,59 @@ public class GuildSystem_Manager : MonoBehaviour
         this.poolingSystem.Return_Func(_elemClass, false);
     }
 
+    public void SelectedMarkMove_Func(bool _isDown)
+    {
+        HireHeroElem_Script _selectedClass = this.whichOneClass.GetWhichOne_Func();
+        int _selectedID = this.elemClassList.IndexOf(_selectedClass);
+        int _nextSelectedID = _selectedID;
+        if(_isDown == true)
+        {
+            _nextSelectedID++;
+            _nextSelectedID %= this.elemClassList.Count;
+        }
+        else
+        {
+            _nextSelectedID--;
+
+            if(_nextSelectedID < 0)
+            {
+                _nextSelectedID = this.elemClassList.Count - 1;
+            }
+        }
+
+        HireHeroElem_Script _nextElem = this.elemClassList[_nextSelectedID];
+        this.SelectedElem_Func(_nextElem);
+    }
+
     public void HiredselectedHero_Func()
     {
         HireHeroElem_Script _selectedElemClass = this.whichOneClass.GetWhichOne_Func();
 
-        _selectedElemClass.SetSoldOut_Func();
+        if(_selectedElemClass.isHirable == true)
+        {
+            int _hireCost = _selectedElemClass.hireCost;
+
+            if (UserSystem_Manager.Instance.TryControlResource_Func(UserSystem_Manager.ResourceControlType.Cost, _hireCost) == true)
+            {
+                UserSystem_Manager.HireHeroData _hireHeroData;
+                _hireHeroData.heroType = _selectedElemClass.heroType;
+                _hireHeroData.heroName = _selectedElemClass.heroName;
+                _hireHeroData.heroLevel = _selectedElemClass.heroLevel;
+                UserSystem_Manager.Instance.HireHero_Func(_hireHeroData);
+
+                this.resumeClass.Hired_Func();
+
+                _selectedElemClass.SetSoldOut_Func();
+            }
+        }
     }
 
     public void Deactivate_Func()
     {
-    guildObj.GetComponent<UIPopupTween>().CloseTween();
-    //guildObj.SetActive(false);
+    //guildObj.GetComponent<UIPopupTween>().CloseTween();
+        guildObj.SetActive(false);
+
+        UserControlSystem_Manager.Instance.SetState_Func(UserControlSystem_Manager.ControlState.MainField);
     }
 
     private void CallDel_DayPass_Func(int _currentDay)

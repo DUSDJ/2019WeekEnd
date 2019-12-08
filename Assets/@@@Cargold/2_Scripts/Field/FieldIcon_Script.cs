@@ -15,7 +15,7 @@ public class FieldIcon_Script : MonoBehaviour, IGeneratedByPoolingSystem
 
     }
 
-    public void CallBtn_Selected_Func()
+    public virtual void CallBtn_Selected_Func()
     {
         FieldSystem_Manager.Instance.SelectedIcon_Func(this);
     }

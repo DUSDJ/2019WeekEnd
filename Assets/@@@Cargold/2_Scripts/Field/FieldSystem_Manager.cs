@@ -14,6 +14,7 @@ public class FieldSystem_Manager : MonoBehaviour
 
     private List<FieldDungeon_Script> fieldDungeonList;
     private GeneratePosControl[] generatePosControlArr;
+    private FieldDungeon_Script selectedFieldDungeonClass;
 
     public IEnumerator Init_Cor(int _layer)
     {
@@ -45,63 +46,12 @@ public class FieldSystem_Manager : MonoBehaviour
     {
         GenerateDungeon_Func(1);
     }
-    
-    public void SelectedIcon_Func(FieldIcon_Script _fieldIconClass)
-    {
-        switch (_fieldIconClass.FieldIconType)
-        {
-            case FieldIconType.Guild:
-                GuildSystem_Manager.Instance.Activate_Func();
-                break;
-
-            case FieldIconType.Dungeon:
-                break;
-
-            case FieldIconType.Boss:
-                break;
-
-            default:
-                break;
-        }
-    }
-
-    public void TimeOutDungeon_Func(FieldDungeon_Script _fieldDungeonClass)
-    {
-        this.fieldDungeonList.Remove_Func(_fieldDungeonClass);
-
-        this.poolingSystem.Return_Func(_fieldDungeonClass);
-
-        bool _isFind = false;
-        foreach (GeneratePosControl item in this.generatePosControlArr)
-        {
-            if (item.generateDungeon == _fieldDungeonClass)
-            {
-                _isFind = true;
-
-                item.generateDungeon = null;
-                break;
-            }
-        }
-        if (_isFind == false)
-            Debug_C.Error_Func("?");
-    }
-    public void CallDel_PassDay_Func(int _currentDay)
-    {
-        for (int i = 0; i < 3; i++)
-        {
-            if (Random_C.CheckPercent_Func(2) == true)
-            {
-                this.GenerateDungeon_Func(_currentDay);
-            }
-        }
-    }
-
     private void GenerateDungeon_Func(int _currentDay)
     {
         GeneratePosControl _generatePosControl = null;
         for (int i = 0; i < this.generatePosControlArr.Length; i++)
         {
-            if(this.generatePosControlArr[i].generateDungeon == null)
+            if (this.generatePosControlArr[i].generateDungeon == null)
             {
                 _generatePosControl = this.generatePosControlArr[i];
                 break;
@@ -131,7 +81,7 @@ public class FieldSystem_Manager : MonoBehaviour
 
                 if (Random_C.CheckPercent_Func(_levelPer) == true)
                 {
-                    _dungeonLevel = (DungeonLevel)(i + 1);
+                    _dungeonLevel = (DungeonLevel)i;
                     break;
                 }
             }
@@ -153,7 +103,7 @@ public class FieldSystem_Manager : MonoBehaviour
             _dungeonData.passDayMin = 3;
             _dungeonData.passDayMax = 5;
             _dungeonData.lastTime = Random.Range(DataBase_Manager.Instance.dungeon.dungeonLastTimeMin, DataBase_Manager.Instance.dungeon.dungeonLastTimeMax);
-            
+
             Transform _pivotTrf = _generatePosControl.generatePosTrf;
             _fieldDungeonClass.transform.SetParent(_pivotTrf);
             _fieldDungeonClass.transform.localPosition = Vector3.zero;
@@ -164,7 +114,84 @@ public class FieldSystem_Manager : MonoBehaviour
             _generatePosControl.generateDungeon = _fieldDungeonClass;
         }
     }
+    public void SelectedIcon_Func(FieldIcon_Script _fieldIconClass)
+    {
+        switch (_fieldIconClass.FieldIconType)
+        {
+            case FieldIconType.Guild:
+                GuildSystem_Manager.Instance.Activate_Func();
+                break;
 
+            case FieldIconType.Dungeon:
+                FieldDungeon_Script _fieldDungeonClass = _fieldIconClass as FieldDungeon_Script;
+                DungeonData _dungeonData = _fieldDungeonClass.GetDungeonData_Func();
+                DungeonInfoView.Instance.UpdateView(_dungeonData);
+
+                selectedFieldDungeonClass = _fieldDungeonClass;
+                break;
+
+            case FieldIconType.Boss:
+                break;
+
+            default:
+                break;
+        }
+    }
+    public void TimeOutDungeon_Func(FieldDungeon_Script _fieldDungeonClass)
+    {
+        if(_fieldDungeonClass.IsExpeditionState == true)
+        {
+            DungeonResultData _resultData = _fieldDungeonClass.GetDungeonResultData_Func();
+            
+            DungeonResultView.Instance.UpdateView(_fieldDungeonClass);
+
+            TimeSystem_Manager.Instance.Pause_Func();
+        }
+        else
+        {
+
+        }
+
+        this.fieldDungeonList.Remove_Func(_fieldDungeonClass);
+
+        this.poolingSystem.Return_Func(_fieldDungeonClass);
+
+        bool _isFind = false;
+        foreach (GeneratePosControl item in this.generatePosControlArr)
+        {
+            if (item.generateDungeon == _fieldDungeonClass)
+            {
+                _isFind = true;
+
+                item.generateDungeon = null;
+                break;
+            }
+        }
+        if (_isFind == false)
+            Debug_C.Error_Func("?");
+    }
+    public void Expedition_Func(UI_HeroListElem_Script[] _elemClassArr)
+    {
+        if(selectedFieldDungeonClass != null)
+        {
+            selectedFieldDungeonClass.Expedition_Func(_elemClassArr);
+        }
+        else
+        {
+            Debug_C.Error_Func("?");
+        }
+    }
+    
+    public void CallDel_PassDay_Func(int _currentDay)
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            if (Random_C.CheckPercent_Func(2) == true)
+            {
+                this.GenerateDungeon_Func(_currentDay);
+            }
+        }
+    }
     private void CallDel_TimeRunning_Func(float _runningTime)
     {
         FieldDungeon_Script _fieldDungeonClass = null;

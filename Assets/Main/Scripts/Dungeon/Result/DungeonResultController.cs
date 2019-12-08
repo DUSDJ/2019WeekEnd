@@ -7,6 +7,6 @@ public static class DungeonResultController
 
     public static void UpdateView(FieldDungeon_Script.IDungeonReseultDataBus resultData)
     {
-        view.UpdateView(resultData);
+        //view.UpdateView(resultData);
     }
 }

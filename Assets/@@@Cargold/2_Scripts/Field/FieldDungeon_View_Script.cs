@@ -22,6 +22,11 @@ public class FieldDungeon_View_Script : MonoBehaviour
         timerImg.fillAmount = _fillAmount;
     }
 
+    public void SetExpeditionState_Func()
+    {
+
+    }
+
     public void Deactivate_Func()
     {
         this.gameObject.SetActive(false);

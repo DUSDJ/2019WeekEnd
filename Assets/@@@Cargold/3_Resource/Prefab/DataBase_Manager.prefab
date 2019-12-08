@@ -111,7 +111,7 @@ MonoBehaviour:
       - "\uD790\uB808\uC774"
   test:
     startGold: 1000
-    dayPassTime: 5
+    dayPassTime: 2
   dungeon:
     levelDataArr:
     - needDay: 5

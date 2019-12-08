@@ -101,6 +101,7 @@ public class UserSystem_Manager : MonoBehaviour
     }
 }
 
+[System.Serializable]
 public class UserHeroData
 {
     public HeroType heroType;
@@ -112,4 +113,13 @@ public class UserHeroData
     public int agility;
     public int intelligence;
     public bool isNeedCounsel;
+
+    public void AddLevel_Func(int _lv)
+    {
+        heroLevel += _lv;
+    }
+    public void AddStress_Func(int _value)
+    {
+        stressPoint += _value;
+    }
 }

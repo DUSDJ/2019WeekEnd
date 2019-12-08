@@ -35,11 +35,13 @@ public class DungeonSlot : MonoBehaviour, IDungeonSlot
         {
             isSelected = false;
             heroIcon.sprite = null;
+            heroIcon.gameObject.SetActive(false);
             return;
         }
+        heroIcon.gameObject.SetActive(true );
         heroDataBus = hero;
         heroIcon.sprite = hero.GetIcon();
 
-        DungeonInfoController.UpdateAverageStress();
+        DungeonInfoView.Instance.UpdateAverageStress();
     }
 }

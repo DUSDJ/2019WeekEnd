@@ -30,20 +30,14 @@ public class Resume_Script : MonoBehaviour
         viewClass.Activate_Func(_torsoSprite, _heroData.job, _heroData.heroDesc, _heroData.hireCost.ToString(), _heroData.isHirable);
     }
 
+    public void Hired_Func()
+    {
+        viewClass.Hired_Func();
+    }
+
     public void CallBtn_Hired_Func()
     {
-        if(UserSystem_Manager.Instance.TryControlResource_Func(UserSystem_Manager.ResourceControlType.Cost, this.hireCost) == true)
-        {
-            UserSystem_Manager.HireHeroData _hireHeroData;
-            _hireHeroData.heroType = this.heroType;
-            _hireHeroData.heroName = this.heroName;
-            _hireHeroData.heroLevel = this.heroLevel;
-            UserSystem_Manager.Instance.HireHero_Func(_hireHeroData);
-
-            GuildSystem_Manager.Instance.HiredselectedHero_Func();
-
-            viewClass.Hired_Func();
-        }
+        GuildSystem_Manager.Instance.HiredselectedHero_Func();
     }
 
     public struct HeroData

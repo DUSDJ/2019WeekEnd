@@ -10,6 +10,8 @@ public class UI_HeroListElem_Script : MonoBehaviour, IGeneratedByPoolingSystem, 
 
     private UserHeroData userHeroData;
 
+    public UserHeroData UserHeroData { get => userHeroData; }
+
     public void Init_Func()
     {
         viewClass.Init_Func();
@@ -45,8 +47,8 @@ public class UI_HeroListElem_Script : MonoBehaviour, IGeneratedByPoolingSystem, 
     {
         viewClass.Selected_Func(true);
 
-        HeroInfoManager _heroInfoManager = null;
-        _heroInfoManager.Show(this);
+        //HeroInfoManager _heroInfoManager = null;
+        //_heroInfoManager.Show(this);
     }
 
     void IWhichOne.SelectCancel_Func()
@@ -66,6 +68,7 @@ public class UI_HeroListElem_Script : MonoBehaviour, IGeneratedByPoolingSystem, 
 
     public Sprite GetIcon()
     {
-        return null;
+        Sprite _iconSprite = DataBase_Manager.Instance.hero.heroDataDic.GetValue_Func(this.userHeroData.heroType).portraitSprite;
+        return _iconSprite;
     }
 }

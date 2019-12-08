@@ -91,6 +91,11 @@ public class TimeSystem_Manager : MonoBehaviour
 
     public void CallBtn_Play_Func()
     {
+        TimePlay_Func();
+    }
+
+    public void TimePlay_Func()
+    {
         if (isTimeRunning == false)
         {
             isTimeRunning = true;
@@ -99,7 +104,5 @@ public class TimeSystem_Manager : MonoBehaviour
         {
             isTimeRunning = false;
         }
-
-        Debug_C.Log_Func("isTimeRunning : " + isTimeRunning);
     }
 }

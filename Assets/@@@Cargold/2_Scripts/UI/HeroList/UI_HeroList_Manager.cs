@@ -35,6 +35,17 @@ public class UI_HeroList_Manager : MonoBehaviour
 
     public void SelectedElem_Func(UI_HeroListElem_Script _elemClass)
     {
-        this.whichOneClass.SetWhichOne_Func(_elemClass);
+        this.whichOneClass.Selected_Func(_elemClass);
+
+        UserControlSystem_Manager.ControlState _currentControlState = UserControlSystem_Manager.Instance.CurrentControlState;
+
+        if(_currentControlState == UserControlSystem_Manager.ControlState.Dungeon_SlotSelected)
+        {
+            DungeonInfoView.Instance.SetHeroData(_elemClass);
+        }
+        else
+        {
+
+        }
     }
 }
