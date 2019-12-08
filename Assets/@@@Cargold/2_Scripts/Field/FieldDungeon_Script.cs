@@ -72,6 +72,11 @@ public class FieldDungeon_Script : FieldIcon_Script, FieldDungeon_Script.IDungeo
         this.lastTimeMax = _lastTime;
         this.lastTime = _lastTime;
         viewClass.SetTimer_Func(1f);
+
+        foreach (var item in _elemClassArr)
+        {
+            item.SetState_Expedition_Func(UI_HeroListElem_Script.ElemExpeditionState.Expediting);
+        }
     }
     public bool TryTimeRunning_Func(float _runningTime)
     {

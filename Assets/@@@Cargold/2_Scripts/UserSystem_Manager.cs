@@ -116,10 +116,26 @@ public class UserHeroData
 
     public void AddLevel_Func(int _lv)
     {
-        heroLevel += _lv;
+        int _heroLvMax = DataBase_Manager.Instance.test.heroLvMax;
+
+        if(heroLevel + _lv <= _heroLvMax)
+        {
+            heroLevel += _lv;
+        }
+        else
+        {
+            heroLevel = _heroLvMax;
+        }
     }
     public void AddStress_Func(int _value)
     {
-        stressPoint += _value;
+        if(stressPoint + _value <= 100)
+        {
+            stressPoint += _value;
+        }
+        else
+        {
+            stressPoint = 100;
+        }
     }
 }

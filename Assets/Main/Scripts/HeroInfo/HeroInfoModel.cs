@@ -11,7 +11,7 @@ public class HeroInfoModel
 
 public interface ICharacter
 {
-    HeroType GetJob();
+    HeroType GetHeroType();
     string GetName();
     int GetLevel();
     int GetStrength();

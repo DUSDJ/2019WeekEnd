@@ -10,6 +10,7 @@ public class UI_HeroListElem_View_Script : MonoBehaviour
     public TextMeshProUGUI titleTxt;
     public Image stressImg;
     public GameObject selectedObj;
+    public Image bgImg;
 
     private const float reviseFill = 0.13f;
 
@@ -43,6 +44,29 @@ public class UI_HeroListElem_View_Script : MonoBehaviour
     public void Selected_Func(bool _isOn)
     {
         selectedObj.SetActive(_isOn);
+    }
+
+    public void SetState_Func(UI_HeroListElem_Script.ElemExpeditionState expeditionState)
+    {
+        switch (expeditionState)
+        {
+            case UI_HeroListElem_Script.ElemExpeditionState.None:
+                break;
+
+            case UI_HeroListElem_Script.ElemExpeditionState.WaitOrder:
+                bgImg.SetColorOnBaseAlpha_Func(Color.white);
+                break;
+
+            case UI_HeroListElem_Script.ElemExpeditionState.Arrangement:
+                break;
+
+            case UI_HeroListElem_Script.ElemExpeditionState.Expediting:
+                bgImg.SetColorOnBaseAlpha_Func(new Color(0.5f, 0.5f, 0.5f, 1f));
+                break;
+
+            default:
+                break;
+        }
     }
 
     public void Deactivate_Func()
