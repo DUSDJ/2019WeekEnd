@@ -102,12 +102,12 @@ public class TimeSystem_Manager : MonoBehaviour
         if (isTimeRunning == false)
         {
             isTimeRunning = true;
-      text.text = "시간재생";
+      text.text = "시간정지";
         }
         else
         {
             isTimeRunning = false;
-      text.text = "시간정지";
+      text.text = "시간재생";
     }
     }
 }

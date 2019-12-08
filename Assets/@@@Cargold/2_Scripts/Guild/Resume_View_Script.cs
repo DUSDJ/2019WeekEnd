@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class Resume_View_Script : MonoBehaviour
 {
     public Image torsoImg;
+  public TextMeshProUGUI nameTMP;
     public TextMeshProUGUI jobTMP;
     public TextMeshProUGUI descTMP;
     public TextMeshProUGUI costTMP;
@@ -19,12 +20,13 @@ public class Resume_View_Script : MonoBehaviour
 
     }
 
-    public void Activate_Func(Sprite _torsoSprite, string _job, string _desc, string _cost, bool _isHirable)
+    public void Activate_Func(Sprite _torsoSprite, string _job, string _desc, string _cost, bool _isHirable, string _name)
     {
         this.torsoImg.sprite = _torsoSprite;
         this.jobTMP.text = _job;
         this.descTMP.text = _desc;
         this.costTMP.text = _cost;
+    this.nameTMP.text = _name;
 
         if(_isHirable == true)
         {

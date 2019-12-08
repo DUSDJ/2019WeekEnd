@@ -11,7 +11,7 @@ public class UIPopupTween : MonoBehaviour
   {
     //transform.localScale = Vector3.zero;
     //seq.Restart();
-    //OpenTween();
+    OpenTween();
   }
 
   public void OpenTween()

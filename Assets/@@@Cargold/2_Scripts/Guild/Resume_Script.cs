@@ -37,7 +37,7 @@ public class Resume_Script : MonoBehaviour
         
 
         Sprite _torsoSprite = DataBase_Manager.Instance.hero.heroDataDic.GetValue_Func(_heroData.heroType).torsoSprite;
-        viewClass.Activate_Func(_torsoSprite, _heroData.job, this.heroDesc, _heroData.hireCost.ToString(), _heroData.isHirable);
+        viewClass.Activate_Func(_torsoSprite, _heroData.job, this.heroDesc, _heroData.hireCost.ToString(), _heroData.isHirable, _heroData.heroName.ToString());
     }
 
     public void Hired_Func()
