@@ -20,14 +20,20 @@ public class TitleManager : MonoBehaviour
 
     public bool trigger = false;
 
-
+       
 
     // Start is called before the first frame update
     void Start()
     {
         tmpMat = tmp.fontMaterials;
         tmpMat2 = tmp2.fontMaterials;
-        
+
+        tmpMat[0].SetFloat("_FaceDilate", -1f);
+        tmpMat[0].SetFloat("_OutlineSoftness", 0f);
+
+        tmpMat2[0].SetFloat("_FaceDilate", -1f);
+        tmpMat2[0].SetFloat("_OutlineSoftness", 0f);
+
 
         for (int i = imgs.Length-1; i > 0; i--)
         {
@@ -47,6 +53,8 @@ public class TitleManager : MonoBehaviour
     {
         if (trigger && Input.anyKeyDown)
         {
+            
+
             SceneManager.LoadScene(1);
         }
     }
