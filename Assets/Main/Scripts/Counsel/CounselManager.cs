@@ -14,6 +14,8 @@ public class CounselData
 
 public class CounselManager : MonoBehaviour
 {
+    public static CounselManager Instance;
+
     public ICharacter nowSelectedHero;
 
     public CounselData[] counselDatabase;
@@ -34,6 +36,8 @@ public class CounselManager : MonoBehaviour
 
         // 등장 연출        
         counselView.gameObject.SetActive(true);
+
+
     }
 
     public CounselModel RetrieveCounselModelOnDatabase(int index)

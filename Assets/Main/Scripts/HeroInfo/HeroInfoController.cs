@@ -20,7 +20,7 @@ public class HeroInfoController
     public void UpdateView()
     {
         view.UpdateView(
-            model.Hero.GetJob().ToString(), model.Hero.GetLevel(), model.Hero.GetName(),
+            model.Hero.GetHeroType(), model.Hero.GetLevel(), model.Hero.GetName(),
             model.Hero.GetStrength(), model.Hero.GetAgility(), model.Hero.GetIntelligence(), model.Hero.GetStress(),
             null, model.Hero.GetNeedCounsel());
     }

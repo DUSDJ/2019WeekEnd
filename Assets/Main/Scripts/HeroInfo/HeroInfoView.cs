@@ -6,6 +6,10 @@ using System.Collections;
 
 public class HeroInfoView : MonoBehaviour
 {
+    public static HeroInfoView Instance;
+
+    public Image torsoImg;
+
     public TextMeshProUGUI heroJob;
     public TextMeshProUGUI heroLevel;
     public TextMeshProUGUI heroName;
@@ -18,12 +22,26 @@ public class HeroInfoView : MonoBehaviour
     public TextMeshProUGUI karmaTexts;
 
     public GameObject counselButton;
+    
+    public IEnumerator Init_Cor()
+    {
+        Instance = this;
 
-    public void UpdateView(string job, int level, string heroName
+        this.Deativate_Func(true);
+
+        yield break;
+    }
+
+    public void UpdateView(HeroType _heroType, int level, string heroName
         , int strengthValue, int agilityValue, int intelligenceValue, int stressValue
         , string[] karmas, bool canCounsel = false)
     {
-        heroJob.text = job;
+        this.gameObject.SetActive(true);
+        
+        Sprite _heroSprite = DataBase_Manager.Instance.hero.heroDataDic.GetValue_Func(_heroType).torsoSprite;
+        torsoImg.sprite = _heroSprite;
+
+        heroJob.text = DataBase_Manager.Instance.hero.heroDataDic.GetValue_Func(_heroType).job;
         heroLevel.text = level.ToString();
         this.heroName.text = heroName;
 
@@ -47,5 +65,15 @@ public class HeroInfoView : MonoBehaviour
         counselButton.SetActive(canCounsel);
 
         Debug.Log("?");
+    }
+    
+    public void Deativate_Func(bool _isInit = false)
+    {
+        this.gameObject.SetActive(false);
+    }
+
+    public void CallBtn_Close_Func()
+    {
+        this.Deativate_Func();
     }
 }

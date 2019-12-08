@@ -23,6 +23,11 @@ public class UI_Time_Manager : MonoBehaviour
         yield break;
     }
 
+    public void GameStart_Func()
+    {
+        dayTMP.text = "1 일차";
+    }
+
     private void CallDel_DayPass_Func(int _day)
     {
         dayTMP.text = StringBuilder_C.Append_Func(_day.ToString(), "일차");

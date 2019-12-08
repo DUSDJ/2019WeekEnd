@@ -15,6 +15,7 @@ public class GameSystem_Manager : MonoBehaviour
     public DungeonInfoView dungeonInfoView;
     public UserControlSystem_Manager userControlSystem_Manager;
     public DungeonResultView dungeonResultView;
+    public HeroInfoView heroInfoView;
 
     public UI_Time_Manager uI_Time_Manager;
     public UI_Atmo_Manager uI_Atmo_Manager;
@@ -43,6 +44,7 @@ public class GameSystem_Manager : MonoBehaviour
         yield return dungeonInfoView.Init_Cor();
         yield return userControlSystem_Manager.Init_Cor();
         yield return dungeonResultView.Init_Cor();
+        yield return heroInfoView.Init_Cor();
 
         yield return guildSystem_Manager.Init_Cor(1);
         yield return uI_Time_Manager.Init_Cor(1);
@@ -53,6 +55,7 @@ public class GameSystem_Manager : MonoBehaviour
         TimeSystem_Manager.Instance.Activate_Func();
         FieldSystem_Manager.Instance.Activate_Func();
         UserControlSystem_Manager.Instance.GameStart_Func();
+        UI_Time_Manager.Instance.GameStart_Func();
 
         yield break;
     }

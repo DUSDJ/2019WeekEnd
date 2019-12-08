@@ -346,6 +346,7 @@ MonoBehaviour:
   titleTxt: {fileID: 8233202406805835932}
   stressImg: {fileID: 8233202406322484619}
   selectedObj: {fileID: 8403071227795513765}
+  bgImg: {fileID: 7351107988563282637}
 --- !u!1 &8233202406805835934
 GameObject:
   m_ObjectHideFlags: 0

@@ -5087,8 +5087,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   background: {fileID: 5097172433649260901}
-  portrait: {fileID: 0}
-  portraitMask: {fileID: 0}
+  portrait: {fileID: 3157673359206698769}
+  portraitMask: {fileID: 287544235183986886}
   lines:
   - {fileID: 5097172435356456997}
   - {fileID: 5097172434658644827}
@@ -5096,7 +5096,8 @@ MonoBehaviour:
   body: {fileID: 5097172433949998602}
   selectionControllers:
   - {fileID: 5097172433614797184}
-  - {fileID: 0}
+  - {fileID: 5097172434644117250}
+  - {fileID: 3157673359661799721}
 --- !u!222 &5097172433649260898
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5319,6 +5320,7 @@ GameObject:
   - component: {fileID: 1898641627}
   - component: {fileID: -5555063384771115612}
   - component: {fileID: 8330089856491103824}
+  - component: {fileID: 6383263506532465422}
   m_Layer: 5
   m_Name: HeroInfo & Counsel Panel
   m_TagString: Untagged
@@ -5396,6 +5398,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cedf4fa2617a0c4db6b22c8910f63a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6383263506532465422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5097172434040295597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b62109ce709656741abcc68e633d984d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heroJob: {fileID: 2438286003271154380}
+  heroLevel: {fileID: 287544234236717078}
+  heroName: {fileID: 7914549531924271643}
+  statusGauses:
+  - {fileID: 3157673359385436058}
+  - {fileID: 3157673358580724753}
+  - {fileID: 287544234990056147}
+  stressValue: {fileID: 3157673358692233792}
+  stressGauses: {fileID: 287544234116344804}
+  karmaTexts: {fileID: 287544235440921807}
+  counselButton: {fileID: 287544234799538802}
 --- !u!1 &5097172434427316525
 GameObject:
   m_ObjectHideFlags: 0
