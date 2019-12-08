@@ -63,8 +63,6 @@ public class HeroInfoView : MonoBehaviour
         }
 
         counselButton.SetActive(canCounsel);
-
-        Debug.Log("?");
     }
     
     public void Deativate_Func(bool _isInit = false)

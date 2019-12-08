@@ -98,6 +98,9 @@ public class GuildSystem_Manager : MonoBehaviour
         GenerateHero.HeroData _generateHeroData = generateHeroClass.GetGenerateHeroData_Func();
         _heroData.heroLevel = _generateHeroData.heroLevel;
         _heroData.hireCost = _generateHeroData.hireCost;
+        _heroData.strength = _generateHeroData.strength;
+        _heroData.agility = _generateHeroData.agility;
+        _heroData.intelligence = _generateHeroData.intelligence;
 
         HireHeroElem_Script _hireHeroElemClass = this.poolingSystem.GetComponent_Func();
         _hireHeroElemClass.transform.SetParent(elemGroupTrf);
@@ -118,9 +121,9 @@ public class GuildSystem_Manager : MonoBehaviour
         heroData.hireCost = _elemClass.hireCost;
         heroData.heroLevel = _elemClass.heroLevel;
         heroData.isHirable = _elemClass.isHirable;
-        heroData.str = UnityEngine.Random.Range(1, 100);
-        heroData.agi = UnityEngine.Random.Range(1, 100);
-        heroData.intel = UnityEngine.Random.Range(1, 100);
+        heroData.str = _elemClass.strength;
+        heroData.agi = _elemClass.agility;
+        heroData.intel = _elemClass.intelligence;
 
         this.resumeClass.Activate_Func(heroData);
     }
@@ -169,6 +172,9 @@ public class GuildSystem_Manager : MonoBehaviour
                 _hireHeroData.heroType = _selectedElemClass.heroType;
                 _hireHeroData.heroName = _selectedElemClass.heroName;
                 _hireHeroData.heroLevel = _selectedElemClass.heroLevel;
+                _hireHeroData.strength = _selectedElemClass.strength;
+                _hireHeroData.agility = _selectedElemClass.agility;
+                _hireHeroData.intelligence = _selectedElemClass.intelligence;
                 UserSystem_Manager.Instance.HireHero_Func(_hireHeroData);
 
                 this.resumeClass.Hired_Func();
@@ -241,6 +247,10 @@ public class GuildSystem_Manager : MonoBehaviour
             int _cost = (int)(_heroLevel * Random.Range(this.generateCostMin, this.generateCostMax) * this.reviseCost);
             _heroData.hireCost = _cost;
 
+            _heroData.strength = Random.Range(1, 100);
+            _heroData.agility = Random.Range(1, 100);
+            _heroData.intelligence = Random.Range(1, 100);
+
             return _heroData;
         }
 
@@ -248,6 +258,9 @@ public class GuildSystem_Manager : MonoBehaviour
         {
             public int heroLevel;
             public int hireCost;
+            public int strength;
+            public int agility;
+            public int intelligence;
         }
     }
 }

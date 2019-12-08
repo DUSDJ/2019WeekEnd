@@ -39,6 +39,10 @@ public class UserSystem_Manager : MonoBehaviour
         _userHeroData.heroType = _hireHeroData.heroType;
         _userHeroData.heroName = _hireHeroData.heroName;
         _userHeroData.heroLevel = _hireHeroData.heroLevel;
+        _userHeroData.strength = _hireHeroData.strength;
+        _userHeroData.agility = _hireHeroData.agility;
+        _userHeroData.intelligence = _hireHeroData.intelligence;
+        _userHeroData.karmaArr = Karma.Instance.GetKarmas(_hireHeroData.heroType, UnityEngine.Random.Range(2, 5));
 
         this.userHeroDataList.AddNewItem_Func(_userHeroData);
 
@@ -98,6 +102,9 @@ public class UserSystem_Manager : MonoBehaviour
         public HeroType heroType;
         public string heroName;
         public int heroLevel;
+        public int strength;
+        public int agility;
+        public int intelligence;
     }
 }
 
@@ -113,6 +120,7 @@ public class UserHeroData
     public int agility;
     public int intelligence;
     public bool isNeedCounsel;
+    public string[] karmaArr;
 
     public void AddLevel_Func(int _lv)
     {

@@ -33,9 +33,7 @@ public class Resume_Script : MonoBehaviour
         this.heroDesc = string.Format(desc, _heroData.heroName, _heroData.heroLevel, _heroData.job, _heroData.str, _heroData.agi, _heroData.intel);
         this.hireCost = _heroData.hireCost;
         this.heroLevel = _heroData.heroLevel;
-
         
-
         Sprite _torsoSprite = DataBase_Manager.Instance.hero.heroDataDic.GetValue_Func(_heroData.heroType).torsoSprite;
         viewClass.Activate_Func(_torsoSprite, _heroData.job, this.heroDesc, _heroData.hireCost.ToString(), _heroData.isHirable, _heroData.heroName.ToString());
     }

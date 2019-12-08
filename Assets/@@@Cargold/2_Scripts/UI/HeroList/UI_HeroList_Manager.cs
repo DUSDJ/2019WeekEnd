@@ -35,31 +35,40 @@ public class UI_HeroList_Manager : MonoBehaviour
 
     public void SelectedElem_Func(UI_HeroListElem_Script _elemClass)
     {
-        this.whichOneClass.Selected_Func(_elemClass);
-
-        UserControlSystem_Manager.ControlState _currentControlState = UserControlSystem_Manager.Instance.CurrentControlState;
-
-        if(_currentControlState == UserControlSystem_Manager.ControlState.Dungeon_SlotSelected)
+        if(this.whichOneClass.Compare_Func(_elemClass) == false)
         {
-            DungeonInfoView.Instance.SetHeroData(_elemClass);
+            this.whichOneClass.Selected_Func(_elemClass);
 
-            _elemClass.SetState_Expedition_Func(UI_HeroListElem_Script.ElemExpeditionState.Arrangement);
+            UserControlSystem_Manager.ControlState _currentControlState = UserControlSystem_Manager.Instance.CurrentControlState;
+
+            if (_currentControlState == UserControlSystem_Manager.ControlState.Dungeon_SlotSelected)
+            {
+                DungeonInfoView.Instance.SetHeroData(_elemClass);
+
+                _elemClass.SetState_Expedition_Func(UI_HeroListElem_Script.ElemExpeditionState.Arrangement);
+            }
+            else
+            {
+                HeroInfoManager.Instance.Show(_elemClass);
+
+                //HeroType _heroType = _elemClass.UserHeroData.heroType;
+                //string _job = DataBase_Manager.Instance.hero.heroDataDic.GetValue_Func(_heroType).job;
+                //int _level = _elemClass.UserHeroData.heroLevel;
+                //string _heroName = _elemClass.UserHeroData.heroName;
+                //int _str = _elemClass.UserHeroData.strength;
+                //int _agi = _elemClass.UserHeroData.agility;
+                //int _int = _elemClass.UserHeroData.intelligence;
+                //int _stress = _elemClass.UserHeroData.stressPoint;
+                //string[] _karmaArr = new string[] { "김대도 바보", "Karma1", "Cargold Is God" };  
+
+                //HeroInfoView.Instance.UpdateView(_job, _level, _heroName, _str, _agi, _int, _stress, _karmaArr);
+            }
         }
         else
         {
-            HeroInfoManager.Instance.Show(_elemClass);
+            this.whichOneClass.SelectCancel_Func();
 
-            //HeroType _heroType = _elemClass.UserHeroData.heroType;
-            //string _job = DataBase_Manager.Instance.hero.heroDataDic.GetValue_Func(_heroType).job;
-            //int _level = _elemClass.UserHeroData.heroLevel;
-            //string _heroName = _elemClass.UserHeroData.heroName;
-            //int _str = _elemClass.UserHeroData.strength;
-            //int _agi = _elemClass.UserHeroData.agility;
-            //int _int = _elemClass.UserHeroData.intelligence;
-            //int _stress = _elemClass.UserHeroData.stressPoint;
-            //string[] _karmaArr = new string[] { "김대도 바보", "Karma1", "Cargold Is God" };  
-
-            //HeroInfoView.Instance.UpdateView(_job, _level, _heroName, _str, _agi, _int, _stress, _karmaArr);
+            HeroInfoManager.Instance.Hide();
         }
     }
 

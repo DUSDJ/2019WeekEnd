@@ -62,6 +62,10 @@ public class DungeonInfoView : MonoBehaviour
         speechBubble.SetActive(false);
 
         selectedSlot = null;
+
+        UserControlSystem_Manager.Instance.SetState_Func(UserControlSystem_Manager.ControlState.Dungeon_Activate);
+
+        TimeSystem_Manager.Instance.Pause_Func();
     }
 
     public void UpdateAverageStress()

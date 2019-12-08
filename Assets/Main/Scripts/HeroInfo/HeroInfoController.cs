@@ -19,9 +19,12 @@ public class HeroInfoController
 
     public void UpdateView()
     {
+        HeroType _heroType = model.Hero.GetHeroType();
+        string[] _karmaArr = model.Hero.GetKarmaArr_Func();
+
         view.UpdateView(
-            model.Hero.GetHeroType(), model.Hero.GetLevel(), model.Hero.GetName(),
+            _heroType, model.Hero.GetLevel(), model.Hero.GetName(),
             model.Hero.GetStrength(), model.Hero.GetAgility(), model.Hero.GetIntelligence(), model.Hero.GetStress(),
-            null, model.Hero.GetNeedCounsel());
+            _karmaArr, model.Hero.GetNeedCounsel());
     }
 }

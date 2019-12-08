@@ -23,9 +23,11 @@ public class UI_HeroListElem_Script : MonoBehaviour, IGeneratedByPoolingSystem, 
 
     public void Activate_Func(UserHeroData _userHeroData)
     {
+        this.elemExpeditionState = ElemExpeditionState.WaitOrder;
+
         this.userHeroData = _userHeroData;
 
-        var _heroType = _userHeroData.heroType;
+        HeroType _heroType = _userHeroData.heroType;
         Sprite _portraitSprite = DataBase_Manager.Instance.hero.heroDataDic.GetValue_Func(_heroType).portraitSprite;
         string _title = StringBuilder_C.Append_Func("Lv. ", _userHeroData.heroLevel.ToString(), " ", _userHeroData.heroName);
 
@@ -116,6 +118,11 @@ public class UI_HeroListElem_Script : MonoBehaviour, IGeneratedByPoolingSystem, 
     public HeroType GetHeroType()
     {
         return this.userHeroData.heroType;
+    }
+
+    public string[] GetKarmaArr_Func()
+    {
+        return this.userHeroData.karmaArr;   
     }
 
     public enum ElemExpeditionState

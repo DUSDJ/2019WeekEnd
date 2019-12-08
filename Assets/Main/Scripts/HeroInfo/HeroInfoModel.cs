@@ -20,6 +20,7 @@ public interface ICharacter
     bool GetNeedCounsel();
     int GetStress();
     void AddStress(int stress);
+    string[] GetKarmaArr_Func();
 
     Sprite GetIcon();
 }

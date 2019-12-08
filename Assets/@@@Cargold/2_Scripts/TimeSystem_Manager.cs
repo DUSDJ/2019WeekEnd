@@ -39,6 +39,8 @@ public class TimeSystem_Manager : MonoBehaviour
 
     public void Activate_Func()
     {
+        text.text = "정지";
+
         currentDay = 1;
 
         StartCoroutine(TimeRunning_Cor());
@@ -102,12 +104,12 @@ public class TimeSystem_Manager : MonoBehaviour
         if (isTimeRunning == false)
         {
             isTimeRunning = true;
-      text.text = "시간정지";
+            text.text = "재생 중..."; 
         }
         else
         {
             isTimeRunning = false;
-      text.text = "시간재생";
-    }
+            text.text = "정지";
+        }
     }
 }

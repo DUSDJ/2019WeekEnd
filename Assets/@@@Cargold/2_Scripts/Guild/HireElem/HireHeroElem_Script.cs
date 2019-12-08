@@ -13,6 +13,9 @@ public class HireHeroElem_Script : MonoBehaviour, IGeneratedByPoolingSystem, IWh
     public int heroLevel;
     public int hireCost;
     public bool isHirable;
+    public int strength;
+    public int agility;
+    public int intelligence;
 
     public void Init_Func()
     {
@@ -27,6 +30,9 @@ public class HireHeroElem_Script : MonoBehaviour, IGeneratedByPoolingSystem, IWh
         this.heroLevel = _heroData.heroLevel;
         this.hireCost = _heroData.hireCost;
         this.isHirable = true;
+        this.strength = _heroData.strength;
+        this.agility = _heroData.agility;
+        this.intelligence = _heroData.intelligence;
 
         Sprite _portraitSprite = DataBase_Manager.Instance.hero.heroDataDic.GetValue_Func(_heroType).portraitSprite;
         string _title = StringBuilder_C.Append_Func("Lv. ", this.heroLevel.ToString(), " ", heroName);
@@ -80,6 +86,9 @@ public class HireHeroElem_Script : MonoBehaviour, IGeneratedByPoolingSystem, IWh
         public string heroName;
         public int heroLevel;
         public int hireCost;
+        public int strength;
+        public int agility;
+        public int intelligence;
     }
 }
 
